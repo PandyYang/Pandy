@@ -31,6 +31,7 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.*;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 /**
  * 使用poi+itextpdf进行word转pdf
@@ -93,7 +94,7 @@ public class TestPoi {
         } finally {
             try {
                 if (baos != null) {
-                    content = new String(baos.toByteArray(), "utf-8");
+                    content = baos.toString(StandardCharsets.UTF_8);
                     baos.close();
                 }
             } catch (Exception e) {
@@ -137,7 +138,7 @@ public class TestPoi {
                     in.close();
                 }
                 if (baos != null) {
-                    content = new String(baos.toByteArray(), "utf-8");
+                    content = baos.toString(StandardCharsets.UTF_8);
                     baos.close();
                 }
             } catch (Exception e) {
@@ -189,7 +190,7 @@ public class TestPoi {
             document.open();
 // html转pdf
             XMLWorkerHelper.getInstance().parseXHtml(writer, document, new ByteArrayInputStream(html.getBytes()),
-                    Charset.forName("UTF-8"), new FontProvider() {
+                    StandardCharsets.UTF_8, new FontProvider() {
                         @Override
                         public boolean isRegistered(String s) {
                             return false;

@@ -3,7 +3,6 @@ import javax.activation.DataHandler
 import javax.mail.internet.MimeBodyPart
 import javax.mail.internet.MimeMultipart
 import javax.mail.util.ByteArrayDataSource
-import kotlin.collections.HashMap
 
 data class MeetingMailDetails(
     val METHOD: String?,

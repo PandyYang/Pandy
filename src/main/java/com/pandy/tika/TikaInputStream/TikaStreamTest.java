@@ -18,7 +18,7 @@ public class TikaStreamTest {
     public static void main(String[] args) throws IOException, TikaException, SAXException {
         //解析后
         Path outputFile = Paths.get("C:\\Users\\123\\Downloads\\123.txt");
-        PrintWriter  printWriter = new PrintWriter(Files.newOutputStream(outputFile));
+        PrintWriter printWriter = new PrintWriter(Files.newOutputStream(outputFile));
 
         BodyContentHandler contentHandler = new BodyContentHandler(printWriter);
         //输入文件
@@ -28,7 +28,6 @@ public class TikaStreamTest {
         AutoDetectParser parser = new AutoDetectParser();
         Metadata metadata = new Metadata();
         ParseContext parseContext = new ParseContext();
-
 
 
         parser.parse(inputStream, contentHandler, metadata, parseContext);

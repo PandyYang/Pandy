@@ -1,7 +1,6 @@
 package com.pandy.zip
 
 import java.io.File
-import java.io.FileInputStream
 import java.io.FileOutputStream
 import java.util.zip.ZipEntry
 import java.util.zip.ZipOutputStream
@@ -37,7 +36,6 @@ fun main() {
 //    println("finish")
 
 
-
 //    val file = File("C:\\Users\\123\\Projects\\base\\src\\main\\resources\\test\\text.txt")
 //    val fileInputStream = FileInputStream(file)
 //    val readBytes = fileInputStream.readBytes()
@@ -45,8 +43,11 @@ fun main() {
 //    val zos = ZipOutputStream(FileOutputStream(File("C:\\Users\\123\\Downloads\\test\\zipTest.zip"),
 //        ),charset("GBK"))
 
-    val zos = ZipOutputStream(FileOutputStream(File("C:\\Users\\123\\Downloads\\123.zip")
-        ),charset("GBK"))
+    val zos = ZipOutputStream(
+        FileOutputStream(
+            File("C:\\Users\\123\\Downloads\\123.zip")
+        ), charset("GBK")
+    )
 
     zos.putNextEntry(ZipEntry("测试解压缩/"))
     zos.closeEntry()

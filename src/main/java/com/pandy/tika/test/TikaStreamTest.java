@@ -12,13 +12,17 @@ import java.util.List;
 
 public class TikaStreamTest {
 
+    final FileInputStream sourceFile = new FileInputStream("C:\\Users\\123\\Downloads\\测试报告评审表-模板.docx");
+    final File outputDir = new File("D:\\test\\1");
     //每片最大字符数
     int MAXIMUM_TEXT_CHUNK_SIZE = 100;
     OutputStreamWriter out = null;
-    final FileInputStream sourceFile = new FileInputStream("C:\\Users\\123\\Downloads\\测试报告评审表-模板.docx");
-    final File outputDir = new File("D:\\test\\1");
 
     public TikaStreamTest() throws FileNotFoundException {
+    }
+
+    public static void main(String[] args) throws SAXException, TikaException, org.xml.sax.SAXException, IOException {
+        new TikaStreamTest().parseToPlainTextChunks();
     }
 
     public void parseToPlainTextChunks() throws IOException, SAXException, TikaException, org.xml.sax.SAXException {
@@ -43,18 +47,14 @@ public class TikaStreamTest {
         try (InputStream stream = sourceFile) {
             parser.parse(stream, handler, metadata);
             stream.close();
-            int  fileNumber = 0;
+            int fileNumber = 0;
             for (String chunk : chunks) {
                 File f = new File(outputDir, "分片-" + fileNumber + ".txt");
-                        out = new OutputStreamWriter(new FileOutputStream(f));
-                        fileNumber ++;
+                out = new OutputStreamWriter(new FileOutputStream(f));
+                fileNumber++;
                 final FileOutputStream fileOutputStream = new FileOutputStream(f);
                 fileOutputStream.write(chunk.getBytes());
             }
         }
-    }
-
-    public static void main(String[] args) throws SAXException, TikaException, org.xml.sax.SAXException, IOException {
-        new TikaStreamTest().parseToPlainTextChunks();
     }
 }

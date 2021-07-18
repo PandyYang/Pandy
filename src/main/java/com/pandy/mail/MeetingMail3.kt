@@ -1,7 +1,6 @@
 package com.pandy.mail
 
 import com.sun.mail.util.MailSSLSocketFactory
-import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.util.*
 import javax.activation.DataHandler

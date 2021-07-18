@@ -1,7 +1,5 @@
 package com.pandy.tika;
 
-import java.io.*;
-
 import org.apache.tika.exception.TikaException;
 import org.apache.tika.metadata.Metadata;
 import org.apache.tika.parser.AutoDetectParser;
@@ -11,16 +9,19 @@ import org.apache.tika.sax.BodyContentHandler;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.SAXException;
 
+import java.io.*;
+
 public class TikaUtil {
 
     /**
      * 读取文件内容
-     * @param file  要读取的文件
+     *
+     * @param file 要读取的文件
      * @return
      * @throws Exception
      */
     public static String getBody(File file) throws IOException {
-        if(file==null||!file.exists()){
+        if (file == null || !file.exists()) {
             return null;
         }
         ContentHandler handler = null;

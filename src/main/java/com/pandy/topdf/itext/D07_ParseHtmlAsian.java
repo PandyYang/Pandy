@@ -18,6 +18,15 @@ public class D07_ParseHtmlAsian {//the document has no page! 因为只能将html
     public static final String DEST = "D:\\IdeaProjects\\com.pandy.base\\src\\main\\resources\\test\\123-itext-word.pdf";
 
     /**
+     * Main method
+     */
+    public static void main(String[] args) throws IOException, DocumentException {
+        File file = new File(DEST);
+        file.getParentFile().mkdirs();
+        new D07_ParseHtmlAsian().createPdf(DEST);
+    }
+
+    /**
      * Creates a PDF with the words "Hello World"
      *
      * @param file
@@ -36,14 +45,5 @@ public class D07_ParseHtmlAsian {//the document has no page! 因为只能将html
                 new FileInputStream(HTML), StandardCharsets.UTF_8);
         // step 5
         document.close();
-    }
-
-    /**
-     * Main method
-     */
-    public static void main(String[] args) throws IOException, DocumentException {
-        File file = new File(DEST);
-        file.getParentFile().mkdirs();
-        new D07_ParseHtmlAsian().createPdf(DEST);
     }
 }

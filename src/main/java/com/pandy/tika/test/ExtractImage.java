@@ -17,6 +17,10 @@ import java.util.List;
 import java.util.Set;
 
 public class ExtractImage {
+    public static void main(String[] args) throws SAXException, TikaException, org.xml.sax.SAXException, IOException {
+        new ExtractImage().extractImageLinks("https://stackoverflow.com/questions/25492907/apache-tika-read-chunk-at-a-time-from-a-file");
+    }
+
     public void extractImageLinks(String url) throws IOException, SAXException, TikaException, org.xml.sax.SAXException {
         Set<String> imageLinks = new HashSet<String>();
         InputStream is = null;
@@ -28,21 +32,16 @@ public class ExtractImage {
             parser.parse(is, handler, metadata);
             List<Link> links = handler.getLinks();
             Iterator<Link> iter = links.iterator();
-            while(iter.hasNext()) {
+            while (iter.hasNext()) {
                 Link link = iter.next();
-                if(link.isImage())
+                if (link.isImage())
                     imageLinks.add(link.getUri());
             }
-        }
-        finally {
+        } finally {
             is.close();
         }
         for (String imageLink : imageLinks) {
             System.out.println(imageLink);
         }
-    }
-
-    public static void main(String[] args) throws SAXException, TikaException, org.xml.sax.SAXException, IOException {
-        new ExtractImage().extractImageLinks("https://stackoverflow.com/questions/25492907/apache-tika-read-chunk-at-a-time-from-a-file");
     }
 }

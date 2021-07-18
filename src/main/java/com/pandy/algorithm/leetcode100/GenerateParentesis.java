@@ -11,7 +11,6 @@ import java.util.List;
 public class GenerateParentesis {
 
     private List<String> res= new ArrayList<>();
-
     public List<String> generate(int n) {
         dfs("", n, 0, 0);
         return res;

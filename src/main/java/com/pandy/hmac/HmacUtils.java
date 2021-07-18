@@ -9,10 +9,10 @@ import java.util.Arrays;
 
 public class HmacUtils {
 
-    private Mac mac;
+    private final Mac mac;
 
     /**
-     * @param key 密钥，类型为字节数组
+     * @param key       密钥，类型为字节数组
      * @param algorithm 加密的方式
      * @throws NoSuchAlgorithmException
      * @throws InvalidKeyException
@@ -36,7 +36,7 @@ public class HmacUtils {
         return Arrays.equals(signature, result);
     }
 
-    public static enum Algorithm {
+    public enum Algorithm {
 
         HMAC_MD5("HmacMD5"),
         HMAC_SHA1("HmacSHA1"),
@@ -44,7 +44,7 @@ public class HmacUtils {
         HMAC_SHA384("HmacSHA384"),
         HMAC_SHA512("HmacSHA512");
 
-        private String value;
+        private final String value;
 
         Algorithm(String value) {
             this.value = value;

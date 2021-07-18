@@ -23,6 +23,7 @@ public class HmacTest2 {
 
     /**
      * 加密Hmac 生成定长的消息摘要 发送端
+     *
      * @param key
      * @param data
      * @return 加密之后的16禁止的
@@ -61,10 +62,11 @@ public class HmacTest2 {
 
     /**
      * byte数组转换为16进制
+     *
      * @param src
      * @return
      */
-    public static String bytesToHexString(byte[] src){
+    public static String bytesToHexString(byte[] src) {
         StringBuilder stringBuilder = new StringBuilder();
         if (src == null || src.length <= 0) {
             return null;

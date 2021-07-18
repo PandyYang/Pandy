@@ -16,6 +16,9 @@ import java.util.Date;
 import java.util.Properties;
 
 public class MeetingMail2 {
+    private static Properties props;
+    private static Session session;
+
     public static void main(String[] args) {
         /**
          * 测试发送会议邀请邮件
@@ -28,9 +31,6 @@ public class MeetingMail2 {
          */
         //sendMeetingCancelEmail();
     }
-
-    private static Properties props;
-    private static Session session;
 
     /**
      * 发送会议邀请

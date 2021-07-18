@@ -15,9 +15,9 @@ import java.io.FileOutputStream;
 import java.util.UUID;
 
 public class LibreOfficeAndJodconverter {
-    private static OfficeManager officeManager = null;
     private static final String dirPath = "D:\\IdeaProjects\\com.pandy.base\\src\\main\\resources\\test\\office";
     private static final String LibreOfficeDirPath = "C:\\Program Files\\LibreOffice";
+    private static OfficeManager officeManager = null;
 
     public static void init() throws OfficeException {
         try {
