@@ -18,4 +18,11 @@ public class IsValid {
         }
         return stack.isEmpty();
     }
+
+    public boolean isValid2(String s) {
+        for (int i = 0; i < s.length()/2; i++) {
+            s = s.replace("()", "").replace("{}", "").replace("[]", "");
+        }
+        return s.length() == 0;
+    }
 }
