@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 /**
  * @author Pandy
+ * 寻找公共前缀
  */
 public class LongestCommonPrefix {
     public static String longestCommonPrefix(String[] strs) {
