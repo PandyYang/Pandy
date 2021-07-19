@@ -7,6 +7,7 @@
 # Editor-based HTTP Client requests
 /httpRequests/
 /target/
+*.class
 *.class### JENKINS_HOME template
 # Learn more about Jenkins and JENKINS_HOME directory for which this file is
 # intended.
