@@ -94,7 +94,7 @@ public class TestPoi {
         } finally {
             try {
                 if (baos != null) {
-                    content = baos.toString(StandardCharsets.UTF_8);
+                    content = baos.toString(String.valueOf(StandardCharsets.UTF_8));
                     baos.close();
                 }
             } catch (Exception e) {
@@ -138,7 +138,7 @@ public class TestPoi {
                     in.close();
                 }
                 if (baos != null) {
-                    content = baos.toString(StandardCharsets.UTF_8);
+                    content = baos.toString(String.valueOf(StandardCharsets.UTF_8));
                     baos.close();
                 }
             } catch (Exception e) {
