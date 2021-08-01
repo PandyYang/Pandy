@@ -1,5 +1,6 @@
 package com.pandy.rabbitmq;
 
+import com.pandy.rabbitmq.utils.RabbitMQUtil;
 import com.rabbitmq.client.*;
 import org.junit.Test;
 
@@ -10,15 +11,16 @@ public class Consumer {
 
     @Test
     public void test() throws IOException, TimeoutException {
-        ConnectionFactory connectionFactory = new ConnectionFactory();
-        connectionFactory.setHost("47.95.216.30");
-        connectionFactory.setPort(5672);
-        connectionFactory.setVirtualHost("/ems");
-        connectionFactory.setUsername("guest");
-        connectionFactory.setPassword("guest");
-        //获取链接对象
-        Connection connection = connectionFactory.newConnection();
+//        ConnectionFactory connectionFactory = new ConnectionFactory();
+//        connectionFactory.setHost("47.95.216.30");
+//        connectionFactory.setPort(5672);
+//        connectionFactory.setVirtualHost("/ems");
+//        connectionFactory.setUsername("guest");
+//        connectionFactory.setPassword("guest");
+//        //获取链接对象
+//        Connection connection = connectionFactory.newConnection();
         //获取链接通道
+        Connection connection = RabbitMQUtil.getConnection();
         Channel channel = connection.createChannel();
         channel.queueDeclare("hello",false,false,false,null);
         //消费消息
