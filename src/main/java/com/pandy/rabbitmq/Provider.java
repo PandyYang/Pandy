@@ -4,6 +4,7 @@ import com.pandy.rabbitmq.utils.RabbitMQUtil;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
+import com.rabbitmq.client.MessageProperties;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -43,7 +44,9 @@ public class Provider {
         //参数2 队列名称
         //参数3 传递消息额外设置
         //参数4 消息的具体内容
-        channel.basicPublish("", "hello", null, "hello world".getBytes());
+        channel.basicPublish("",
+                "hello",
+                MessageProperties.MINIMAL_PERSISTENT_BASIC, "hello world".getBytes());
 
         RabbitMQUtil.close(channel, connection);
 //        channel.close();
