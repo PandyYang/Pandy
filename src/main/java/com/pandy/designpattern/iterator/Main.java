@@ -1,4 +1,4 @@
-package com.pandy.base.designpattern.iterator;
+package com.pandy.designpattern.iterator;
 
 /**
  * @author Pandy

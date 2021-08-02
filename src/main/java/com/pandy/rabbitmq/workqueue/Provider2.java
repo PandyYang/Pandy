@@ -1,4 +1,4 @@
-package com.pandy.rabbitmq.xunhuan;
+package com.pandy.rabbitmq.workqueue;
 
 import com.pandy.rabbitmq.utils.RabbitMQUtil;
 import com.rabbitmq.client.Channel;

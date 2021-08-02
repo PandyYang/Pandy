@@ -1,4 +1,4 @@
-package com.pandy.base.designpattern.observer;
+package com.pandy.designpattern.observer;
 
 public interface Subject {
     public void registerObserver(Observer o); // 注册观察者

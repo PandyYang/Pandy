@@ -1,4 +1,4 @@
-package com.pandy.base.designpattern.template;
+package com.pandy.designpattern.template;
 
 import java.nio.charset.StandardCharsets;
 

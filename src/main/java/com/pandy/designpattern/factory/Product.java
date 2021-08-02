@@ -1,4 +1,4 @@
-package com.pandy.base.designpattern.factory;
+package com.pandy.designpattern.factory;
 
 /**
  * @author Pandy
