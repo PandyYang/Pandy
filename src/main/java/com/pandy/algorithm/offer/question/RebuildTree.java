@@ -16,7 +16,7 @@ public class RebuildTree {
         stack.push(root);
         while (!stack.empty()) {
             TreeNode node = stack.pop();
-            list.add(node.data);
+            list.add(node.val);
             if (node.right != null) {
                 stack.push(node.right);
             }
@@ -40,7 +40,7 @@ public class RebuildTree {
             }
             curr = stack.peek();
             stack.pop();
-            list.add(curr.data);
+            list.add(curr.val);
             curr = curr.right;
         }
         System.out.println(list);

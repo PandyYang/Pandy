@@ -1,7 +1,6 @@
 package com.pandy.algorithm.base.tree;
 
-import com.pandy.algorithm.huawei.TreeNode;
-import org.elasticsearch.client.ml.inference.trainedmodel.tree.Tree;
+import com.pandy.algorithm.offer.common.TreeNode;
 
 /**
  * @Author Pandy
@@ -10,11 +9,11 @@ import org.elasticsearch.client.ml.inference.trainedmodel.tree.Tree;
  */
 public class LowestCommonAncestor {
 
-    public int low(TreeNode root, int o1, int o2) {
+    public static int low(TreeNode root, int o1, int o2) {
         return commonAncestor(root, o1, o2).val;
     }
 
-    public TreeNode commonAncestor(TreeNode root, int o1, int o2) {
+    public static TreeNode commonAncestor(TreeNode root, int o1, int o2) {
         if (root == null || root.val == o1 || root.val == o2) {
             return root;
         }
@@ -26,5 +25,11 @@ public class LowestCommonAncestor {
         if (right == null) return left;
 
         return root;
+    }
+
+    public static void main(String[] args) {
+        BinaryTree binaryTree = new BinaryTree();
+        TreeNode root = binaryTree.createBinaryTree(new int[]{3, 5, 1, 6, 2, 0, 8, 0, 0, 7, 4}, 0);
+        System.out.println(low(root, 5, 1));
     }
 }

@@ -31,7 +31,7 @@ public class LevelOrder {
                 if (queue.peek().right != null)
                     queue.offer(queue.peek().right);
 
-                level.add(queue.poll().data);
+                level.add(queue.poll().val);
             }
             res.add(level);
         }
