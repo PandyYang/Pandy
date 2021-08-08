@@ -1,4 +1,4 @@
-package com.pandy.base.lock;
+package com.pandy.base.juc;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
