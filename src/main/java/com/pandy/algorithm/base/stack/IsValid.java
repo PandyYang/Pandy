@@ -2,6 +2,9 @@ package com.pandy.algorithm.base.stack;
 
 import java.util.Stack;
 
+/**
+ * 阿里巴巴面试题 判断括号的合法性
+ */
 public class IsValid {
 
     public static boolean isValid(String s) {
