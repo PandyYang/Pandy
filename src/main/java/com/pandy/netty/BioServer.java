@@ -7,12 +7,6 @@ import java.net.Socket;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-/**
- * java bio实例
- * 线程池机制
- *  1.创建一个线程池
- *  2.如果有客户端连接，窗机爱你一个线程与之通信
- */
 public class BioServer {
     public static void main(String[] args) throws IOException {
         ExecutorService newCachedThreadPool = Executors.newCachedThreadPool();
