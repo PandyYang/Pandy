@@ -1,7 +1,6 @@
-package com.pandy.base.juc;
+package com.pandy.base.java.juc;
 
 import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 

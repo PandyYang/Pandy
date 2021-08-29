@@ -31,6 +31,7 @@ public class BinarySearch {
         while(low <= high){
             mid = low+ (high- low) / 2;
             if(nums[mid] == target){
+                // 如果有相同的结果出现 只找出靠近最左边的
                 while(mid != 0 &&(nums[mid-1] == nums[mid])){
                     mid--;
                 }

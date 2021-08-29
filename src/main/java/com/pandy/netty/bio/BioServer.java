@@ -1,4 +1,4 @@
-package com.pandy.netty;
+package com.pandy.netty.bio;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -7,6 +7,12 @@ import java.net.Socket;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+/**
+ * 一个bio模型编写的服务器
+ * 使用telnet命令进行通信
+ * 例如 在命令行输入
+ * telnet 127.0.0.1 6666
+ */
 public class BioServer {
     public static void main(String[] args) throws IOException {
         ExecutorService newCachedThreadPool = Executors.newCachedThreadPool();

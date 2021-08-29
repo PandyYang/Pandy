@@ -1,4 +1,4 @@
-package com.pandy.base.juc;
+package com.pandy.base.java.juc;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;

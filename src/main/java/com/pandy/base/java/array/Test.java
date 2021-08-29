@@ -1,4 +1,4 @@
-package com.pandy.base.array;
+package com.pandy.base.java.array;
 
 import lombok.val;
 

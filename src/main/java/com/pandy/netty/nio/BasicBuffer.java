@@ -1,7 +1,10 @@
-package com.pandy.netty;
+package com.pandy.netty.nio;
 
 import java.nio.IntBuffer;
 
+/**
+ * NIO的buffer
+ */
 public class BasicBuffer {
     public static void main(String[] args) {
         IntBuffer intBuffer = IntBuffer.allocate(5);
