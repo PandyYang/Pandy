@@ -1,4 +1,4 @@
-package com.pandy.kafka;
+package com.pandy.kafka.cp1;
 
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
