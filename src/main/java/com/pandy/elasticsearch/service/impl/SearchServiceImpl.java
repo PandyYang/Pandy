@@ -29,7 +29,6 @@ public class SearchServiceImpl {
     @Autowired
     private ElasticsearchRestTemplate elasticsearchRestTemplate;
 
-
     public ArrayList getAll() {
         SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
         BoolQueryBuilder boolQueryBuilder = new BoolQueryBuilder();
