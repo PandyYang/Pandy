@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to Vue</title>
+  <script src="https://unpkg.com/vue"></script>
+  <style type="text/css">
+    .cls{
+      padding: 20px;
+      border: 1px solid #c1cde2;
+      border-radius: 4px;
+      box-shadow: 0 0 3px 1px #DDDDDD inset;
+    }
+  </style>
+</head>
+<body>
+<!-- 声明名为app的挂载点，加载自定义模板标签 my-component -->
+<div id="app">
+  <my-component></my-component>
+  <button v-on:click="counter += 1">Add 1</button>
+  <p>The Button above has clicked {{counter}} times</p>
+  <button v-on:click="greet">Greet</button>
+  <button v-on:click="say('hi')">hi</button>
+  <button v-on:click="warn('Form cannot be submitted yet.', $event)">Submit</button>
+</div>
+<!-- 注意:这里的script标签的type为 text/x-template ，浏览器解析时将忽略此脚本，并指定了模板的唯一id标示，此id就是下边Vue.component中的模板选择器id -->
+<script type="text/x-template" id="my-component">
+  <div class="cls">This is a template writting in script tag</div>
+</script>
+
+<!-- 页面加载调用脚本 -->
+<script>
+  // 注册模板，指定模板内容id为my-component的模板内容
+  // 第一个参数是标签的名称，如下my-component，使用是就可以通过<my-component>调用
+  Vue.component('my-component',{
+    template:'#my-component'
+  })
+  // 初始化Vue实例，挂载到app节点上
+  new Vue({
+    el: '#app',
+    data: {
+      counter: 0
+    },
+    methods: {
+      greet: function (event) {
+        alert('Hello, now is ' + Date.now().toString())
+        if (event) {
+          alert(event.target.tagName)
+        }
+      },
+      say: function (message) {
+        alert(message)
+      },
+      warn: function (message, event) {
+        // 访问原生事件对象
+        if (event) {
+          event.preventDefault()
+        }
+        alert(message)
+      }
+    }
+  })
+</script>
+</body>
+</html>
