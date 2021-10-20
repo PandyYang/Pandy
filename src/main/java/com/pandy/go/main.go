@@ -1,31 +1,24 @@
 package main
 
-import (
-	"fmt"
-	"time"
-)
+import "strings"
 
 func main() {
-	var count uint16
 
-	go func() {
-		for {
-			//fmt.Println(count)
-			count = count + 1
-			//fmt.Println(count)
-			//if count == 10 {
-			//	break
-			//}
-			//time.Sleep(time.Second)
-			//count = count + 1
+	s := "123.321"
+	println(len(s))
+	ss := s[3:len(s)]
+	println(ss)
+
+	var ress = ""
+	var res = strings.Split("http://dl.xxxxxx.com/8fa1cfbe-549e-45b6/122312312.3/112323222.0-2（3221223）.xmind", "/")[3:]
+	for index, ele := range res {
+		if index < len(res) {
+			ress = ress + ele + "/"
 		}
-	}()
+	}
 
-	time.Sleep(time.Second)
-	fmt.Println(count)
-	fmt.Println("------------------------")
-	//fmt.Println(count)
-	//fmt.Println(count)
+	s2 := ress[0 : len(ress)-1]
+	println(s2)
 }
 
 func addself() {
