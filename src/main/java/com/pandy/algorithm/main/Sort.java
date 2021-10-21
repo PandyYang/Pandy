@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * @author Pandy
  */
-public class Test {
+class Sort {
 
     // 二分查找非递归实现
     private static int search(int[] data, int l, int r, int target) {
@@ -59,6 +59,11 @@ public class Test {
         }
         swap(arr, l, j);
         return j;
+    }
+
+    public static void main(String[] args) {
+        int partition = partition(new int[]{2, 1, 3, 4}, 0, 3);
+        System.out.println("partition = " + partition);
     }
 
     public static void swap(int[] arr, int i, int j) {
