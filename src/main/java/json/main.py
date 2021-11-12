@@ -35,9 +35,9 @@ for k, v in json_data.items():
     # print(dic)
     # print(res)
     # 连续子数组的最大求和
-    print("自系统上线来连续30天的发布和删除数据汇总")
+    print("自系统上线来连续30天的发布和删除最值数据汇总")
     print("----------------发布----------------------")
-    print("连续30天cdn发布数: " + str(maxSum(res, 30)))
+    print("连续30天最多的cdn发布数: " + str(maxSum(res, 30)))
     print("自上线以来发布数量最多的一天的数量: " + str(max(res)))
     print("自上线以来发布数量最多的一天的刷新数量: " + str(max(res)))
     maxDayPre += max(res)
