@@ -17,7 +17,7 @@ import java.io.UnsupportedEncodingException;
 public class Producer {
     public static void main(String[] args) throws MQClientException, UnsupportedEncodingException, MQBrokerException, RemotingException, InterruptedException {
         DefaultMQProducer producer = new DefaultMQProducer("ProducerGroup");
-        producer.setNamesrvAddr("192.168.218.130:9876");
+        producer.setNamesrvAddr("47.95.216.30:9876");
         producer.start();
         Message msg = new Message("TopicTest",
                 "HelloWorld".getBytes(RemotingHelper.DEFAULT_CHARSET));

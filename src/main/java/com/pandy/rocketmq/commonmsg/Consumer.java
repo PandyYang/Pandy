@@ -18,7 +18,8 @@ public class Consumer {
         //设置Consumer第一次启动是从队列头部开始消费还是队列尾部开始消费<br>
         consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
         //指定nameServer的地址
-        consumer.setNamesrvAddr("192.168.218.129:9876;192.168.218.130:9876");
+//        consumer.setNamesrvAddr("192.168.218.129:9876;192.168.218.130:9876");
+        consumer.setNamesrvAddr("47.95.216.30:9876");
         //指定订阅的topic及tag表达式
         consumer.subscribe("TopicTest", "*");
 
