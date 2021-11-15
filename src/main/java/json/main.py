@@ -43,7 +43,7 @@ for k, v in json_data.items():
     maxDayPre += max(res)
     print("发布数量最多的一天的预热数量: " + str(max(res)))
     maxDayRef += max(res)
-    print("连续30天的cdn发布所累积的刷新和预热次数: " + str(maxSum(res, 30)))
+    print("连续30天的cdn发布所累积的刷新和预热次数: " + str(maxSum(res, 30) * 2))
     preheat += maxSum(res, 30)
     refresh += maxSum(res, 30)
 
