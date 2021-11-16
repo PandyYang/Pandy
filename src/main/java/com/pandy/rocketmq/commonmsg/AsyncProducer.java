@@ -8,6 +8,9 @@ import org.apache.rocketmq.common.message.Message;
 import java.nio.charset.StandardCharsets;
 import java.util.concurrent.CountDownLatch;
 
+/**
+ * 异步传输一般用于时间敏感的业务场景
+ */
 public class AsyncProducer {
     public static void main(String[] args) throws Exception {
         DefaultMQProducer producer = new DefaultMQProducer("please_rename_unique_group_name");
