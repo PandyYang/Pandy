@@ -11,7 +11,7 @@ import java.util.List;
 
 public class Consumer {
 
-    public static void TestConsumer() throws MQClientException {
+    public static void main(String[] args) throws MQClientException {
         // 实例化消费者
         DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("test");
 
