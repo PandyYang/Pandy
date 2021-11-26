@@ -1,5 +1,7 @@
 package com.pandy.algorithm.main;
 
+import com.pandy.algorithm.offer.question.ListNode;
+
 import java.util.Scanner;
 
 public class Main {
@@ -21,5 +23,15 @@ public class Main {
             }
         }
         return sb.toString();
+    }
+
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        if (headA == null || headB == null) return null;
+        ListNode heada = headA, headb = headB;
+        while (heada != headb) {
+            heada = heada == null ? headA : heada.next;
+            headb = headb == null ? headB : headb.next;
+        }
+        return heada;
     }
 }
