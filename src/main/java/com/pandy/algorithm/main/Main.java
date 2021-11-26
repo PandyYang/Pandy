@@ -34,4 +34,17 @@ public class Main {
         }
         return heada;
     }
+
+    public boolean hasCycle(ListNode head) {
+        if (head == null) return false;
+        ListNode headFirst = head, headSecond = head;
+        while (true) {
+            if (headFirst == null || headFirst.next == null) return false;
+            headFirst = headFirst.next.next;
+            headSecond = headSecond.next;
+            if (headFirst == headSecond) {
+                return true;
+            }
+        }
+    }
 }
