@@ -2,17 +2,10 @@ package com.pandy.algorithm.main;
 
 import com.pandy.algorithm.offer.question.ListNode;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
-        Scanner scanner = new Scanner(System.in);
-        while (scanner.hasNext()) {
-            String s = scanner.nextLine();
-            System.out.println(replace(s));
-        }
-    }
-
     public static String replace(String s) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < s.length(); i++) {
