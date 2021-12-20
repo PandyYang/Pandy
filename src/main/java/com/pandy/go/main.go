@@ -10,7 +10,6 @@ func main() {
 		if idx+500 < end {
 			end = idx + 499
 		}
-
 		s := arr[idx:end]
 		println(len(s))
 	}
