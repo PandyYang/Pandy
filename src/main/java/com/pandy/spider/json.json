@@ -1,1 +1,44 @@
-{"4kfengjing": 2, "4kmeinv": 22, "4kyouxi": 2, "4kdongman": 2, "4kyingshi": 2, "4kqiche": 2, "4kdongwu": 2, "4krenwu": 2, "4kmeishi": 2, "4kzongjiao": 2, "4kbeijing": 2, "4kmingxing": 2}
+{
+  "real":{
+    "open":true,
+    "rob":{
+      "open":true
+    },
+    "dispatch":{
+      "open":true
+    },
+    "downgrade":{
+      "open":true,
+      "car_type_list":"1,2,4"
+    },
+    "area":{
+      "del_fence_favorite":true,
+      "del_fence_forbid":true,
+      "open_favorite_area":false,
+      "open_forbid_area":false
+    }
+  },
+  "receiving_strategy":{
+    "peak_high_unit_price":false,
+    "peak_more_orders":true,
+    "flat_quantity_price_balance":false,
+    "flat_more_orders":true
+  },
+  "incidentally":{
+    "open":false,
+    "range":{
+      "percentage":0
+    },
+    "poi":{
+      "name":"",
+      "poi_id":"",
+      "longitude":0,
+      "latitude":0,
+      "address":""
+    }
+  },
+  "speedup_coupon":{
+    "open":true,
+    "speedup_type":3
+  }
+}
