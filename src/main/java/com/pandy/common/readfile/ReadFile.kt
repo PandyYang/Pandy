@@ -1,13 +1,11 @@
-package com.qianxin.hiner2.utils
+package com.pandy.common.readfile
 
 import java.io.*
 import java.lang.Exception
 import java.util.*
 import java.util.concurrent.ConcurrentHashMap
-import java.util.concurrent.ForkJoinPool
 import java.util.zip.GZIPInputStream
 import kotlin.collections.ArrayList
-import kotlin.collections.HashMap
 
 /**
  * @date 24/1/2022
