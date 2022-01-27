@@ -12,7 +12,7 @@ import java.util.*
  * @author Pandy
  */
 fun main() {
-    val files = readTxtFileIntoStringArrList("/Users/pandy/Documents/cdn日志分析/分析数据.txt")
+    val files = readFile("/Users/pandy/Documents/cdn日志分析/分析数据.txt")
     files.filter { it != "" }.forEach { file ->
         val filepath = file?.split(" ")?.get(1)
         val num = file?.split(" ")?.get(4)?.replace(",", "")
@@ -21,7 +21,7 @@ fun main() {
 }
 
 
-fun readTxtFileIntoStringArrList(filePath: String): List<String?> {
+fun readFile(filePath: String): List<String?> {
     val list: MutableList<String?> = ArrayList()
     try {
         val encoding = "utf8"

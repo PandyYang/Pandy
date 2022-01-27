@@ -61,9 +61,8 @@ fun getFiles(path: String, list: ArrayList<File>) {
             if (f.isDirectory) {
                 getFiles(f.path, list)
             } else {
-                if (f.name.endsWith("gz")) {
+                if (!f.name.contains("Store"))
                     list.add(f)
-                }
             }
         }
     }
