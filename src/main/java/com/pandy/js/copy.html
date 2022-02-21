@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="text" class="box-text" value="choose me!" />
+<button onclick="handleCopyWithAuth()" >copy</button>
+
+<script>
+     function handleCopyWithAuth() {
+         const input = document.createElement('textarea')
+
+         // 换行复制
+         // input.setAttribute('value', this.copyDoc) // 注意，这样写不行
+         input.value = "您好，请先登录下载中心，再输入以下地址\n" +
+             "\n" +
+             "地址:\n" +
+             "http://xxxxxxxxxxxxxxxxxxxxxxxxxz"
+         document.body.appendChild(input)
+         input.select()
+         document.execCommand('Copy')
+         document.body.removeChild(input)
+
+
+         // 不换行复制
+         // navigator.clipboard.writeText(text).then(function () {
+         //     window.alert("复制成功")
+         // }, function () {
+         //     window.alert("复制失败，请在面板上直接适用ctrl+c复制选中链接")
+         // })
+    }
+
+    function copy(article) {
+        return function (event) {
+            event.clipboardData.setData("text/html", article)
+            event.preventDefault()
+        }
+    }
+</script>
+</body>
+</html>
