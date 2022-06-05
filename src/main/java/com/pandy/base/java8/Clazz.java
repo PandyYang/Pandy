@@ -1,4 +1,4 @@
-package com.pandy.base.java.java8;
+package com.pandy.base.java8;
 
 /**
  * @Author Pandy

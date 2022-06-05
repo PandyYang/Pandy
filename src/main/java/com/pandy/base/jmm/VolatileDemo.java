@@ -1,4 +1,4 @@
-package com.pandy.base.java.jmm;
+package com.pandy.base.jmm;
 
 
 import java.util.concurrent.TimeUnit;

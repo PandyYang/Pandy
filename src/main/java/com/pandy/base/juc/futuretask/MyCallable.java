@@ -1,4 +1,4 @@
-package com.pandy.base.java.juc.futuretask;
+package com.pandy.base.juc.futuretask;
 
 import java.util.concurrent.Callable;
 

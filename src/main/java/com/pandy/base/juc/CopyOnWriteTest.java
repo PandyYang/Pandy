@@ -1,4 +1,4 @@
-package com.pandy.base.java.juc;
+package com.pandy.base.juc;
 
 import java.util.Iterator;
 import java.util.List;

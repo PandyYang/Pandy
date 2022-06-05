@@ -1,4 +1,4 @@
-package com.pandy.base.java.proxy;
+package com.pandy.base.proxy;
 
 import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.cglib.proxy.MethodInterceptor;

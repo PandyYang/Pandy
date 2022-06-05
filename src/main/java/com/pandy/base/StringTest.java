@@ -1,4 +1,4 @@
-package com.pandy.base.java;
+package com.pandy.base;
 
 import java.util.ArrayList;
 
