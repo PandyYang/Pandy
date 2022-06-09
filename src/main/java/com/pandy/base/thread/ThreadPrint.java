@@ -6,6 +6,8 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @Author Pandy
  * @Date 2021/8/9 21:33
  * 多线程交叉打印奇数 偶数
+ * 一个方法是使用AtomicInteger实现
+ * 一个是volatile关键字实现
  */
 public class ThreadPrint extends Thread {
 
