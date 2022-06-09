@@ -1,5 +1,8 @@
 package com.pandy.base.thread;
 
+import lombok.SneakyThrows;
+import org.apache.tomcat.jni.Time;
+
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
@@ -26,9 +29,11 @@ public class CountDownLatchTest {
             System.out.println("开始任务执行...");
             for (int j = 0; j < 5; j++) {
                 new Thread(new Runnable() {
+                    @SneakyThrows
                     @Override
                     public void run() {
                         System.out.println("线程" + Thread.currentThread().getName() + "开始执行...");
+                        TimeUnit.SECONDS.sleep(3);
                         countDownLatch.countDown();
                     }
                 }).start();
