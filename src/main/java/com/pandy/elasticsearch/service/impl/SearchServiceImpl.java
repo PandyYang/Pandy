@@ -11,6 +11,7 @@ import org.elasticsearch.common.unit.Fuzziness;
 import org.elasticsearch.common.unit.TimeValue;
 import org.elasticsearch.index.query.*;
 import org.elasticsearch.search.SearchHit;
+import org.elasticsearch.search.SearchHits;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.elasticsearch.search.fetch.subphase.highlight.HighlightBuilder;
 import org.elasticsearch.search.sort.FieldSortBuilder;
@@ -21,6 +22,7 @@ import org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 @Service
@@ -58,7 +60,7 @@ public class SearchServiceImpl {
         SearchResponse searchResponse = elasticsearchRestTemplate.execute(client -> {
             return client.search(searchRequest, RequestOptions.DEFAULT);
         });
-        final val hits = searchResponse.getHits();
+        SearchHits hits = searchResponse.getHits();
         TotalHits totalHits = hits.getTotalHits();
         long numHits = totalHits.value;
         SearchHit[] searchHits = hits.getHits();
@@ -67,8 +69,8 @@ public class SearchServiceImpl {
         for (SearchHit searchHit : searchHits) {
             //searchHit.getFields();
             String sourceAsMapping = searchHit.getSourceAsString();
-            final val sourceAsMap = searchHit.getSourceAsMap();
-            final val name = sourceAsMap.get("name");
+            Map<String, Object> sourceAsMap = searchHit.getSourceAsMap();
+            Object name = sourceAsMap.get("name");
             user.setName((String) name);
         }
         arrayList.add(user);

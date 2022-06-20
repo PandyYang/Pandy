@@ -1,7 +1,5 @@
 package com.pandy.algorithm.LRUCache;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Spliterator;
@@ -65,7 +63,6 @@ public class LRU<K, V> implements Iterable<K> {
         return node;
     }
 
-    @NotNull
     @Override
     public Iterator<K> iterator() {
         return null;

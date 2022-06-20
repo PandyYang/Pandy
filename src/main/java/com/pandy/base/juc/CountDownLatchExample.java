@@ -7,21 +7,6 @@ import java.util.concurrent.CountDownLatch;
  * @Date 2021/7/20 22:19
  */
 public class CountDownLatchExample {
-//    public static void main(String[] args) throws InterruptedException {
-//        final int totalThread = 20;
-//        CountDownLatch count = new CountDownLatch(totalThread);
-//        ExecutorService executorService = Executors.newCachedThreadPool();
-//        for (int i = 0; i < totalThread; i++) {
-//            executorService.execute(() -> {
-//                System.out.println("run...");
-//                count.countDown();
-//            });
-//        }
-//        count.await();
-//        System.out.println("end");
-//        executorService.shutdown();
-//    }
-//
     private static int LATCH_SIZE = 5;
     private static CountDownLatch doneSingle;
 

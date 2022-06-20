@@ -60,12 +60,24 @@ public class TikaChunkTest {
         public void characters(char[] ch, int start, int length) {
             int size = 0;
             if (out == null || size + length > MAXIMUM_TEXT_CHUNK_SIZE) {
-                if (out != null) out.close();
+                if (out != null) try {
+                    out.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 fileNumber++;
                 File f = new File(outputDir, "output-" + fileNumber + ".txt");
-                out = new OutputStreamWriter(new FileOutputStream(f));
+                try {
+                    out = new OutputStreamWriter(new FileOutputStream(f));
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
             }
-            out.write(ch, start, length);
+            try {
+                out.write(ch, start, length);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
         public void close() throws IOException {
