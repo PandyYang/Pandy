@@ -16,9 +16,4 @@ public class GoodsProducer implements Runnable {
             goodsStock.produceGoods();
         }
     }
-
-
-
-
-
 }
