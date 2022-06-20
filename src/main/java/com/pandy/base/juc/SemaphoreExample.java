@@ -1,5 +1,6 @@
 package com.pandy.base.juc;
 
+import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
@@ -9,23 +10,30 @@ import java.util.concurrent.Semaphore;
  * @Date 2021/7/20 22:33
  */
 public class SemaphoreExample {
+    //停车场同时容纳的车辆10
+    private static final Semaphore semaphore = new Semaphore(10);
     public static void main(String[] args) {
-        final int clientCount = 3;
-        final int totalRequestCount = 10;
-        Semaphore semaphore = new Semaphore(clientCount);
-        ExecutorService executorService = Executors.newCachedThreadPool();
-        for (int i = 0; i < totalRequestCount; i++) {
-            executorService.execute(() -> {
-                try {
-                    semaphore.acquire();
-                    System.out.println(semaphore.availablePermits());
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } finally {
-                    semaphore.release();
+        //模拟100辆车进入停车场
+        for (int i = 0; i < 100; i++) {
+            Thread thread = new Thread(new Runnable() {
+                public void run() {
+                    try {
+                        System.out.println("====" + Thread.currentThread().getName() + "来到停车场");
+                        if (semaphore.availablePermits() == 0) {
+                            System.out.println("车位不足，请耐心等待");
+                        }
+                        semaphore.acquire();//获取令牌尝试进入停车场
+                        System.out.println(Thread.currentThread().getName() + "成功进入停车场");
+                        Thread.sleep(new Random().nextInt(10000));//模拟车辆在停车场停留的时间
+                        System.out.println(Thread.currentThread().getName() + "驶出停车场");
+                        semaphore.release();//释放令牌，腾出停车场车位
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
-            });
+            }, i + "号车");
+            thread.start();
         }
-        executorService.shutdown();
     }
+
 }
