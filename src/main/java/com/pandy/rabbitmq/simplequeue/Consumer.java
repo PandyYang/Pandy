@@ -1,4 +1,4 @@
-package com.pandy.rabbitmq.helloworld;
+package com.pandy.rabbitmq.simplequeue;
 
 import com.pandy.rabbitmq.utils.RabbitMQUtil;
 import com.rabbitmq.client.*;

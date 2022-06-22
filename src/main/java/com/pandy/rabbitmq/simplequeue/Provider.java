@@ -1,14 +1,18 @@
-package com.pandy.rabbitmq.helloworld;
+package com.pandy.rabbitmq.simplequeue;
 
 import com.pandy.rabbitmq.utils.RabbitMQUtil;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
-import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.MessageProperties;
 import org.junit.Test;
 
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
+
+/**
+ * 简单队列模式
+ * 由生产者通过直接将消息发送给消费者
+ */
 
 public class Provider {
 
