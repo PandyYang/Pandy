@@ -12,9 +12,12 @@ public class Provider {
         Connection connection = RabbitMQUtil.getConnection();
         Channel channel = connection.createChannel();
 
+        // 非自动删除、非持久的交换，没有额外的参数
+        // 交换机 极其类型
         channel.exchangeDeclare("log_direct", "direct");
 
         String routingkey = "error";
+
         channel.basicPublish("log_direct",
                 routingkey,
                 null,

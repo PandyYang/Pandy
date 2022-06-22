@@ -37,14 +37,14 @@ deleteWhen = 04
 fileReservedTime = 48
 brokerRole = ASYNC_MASTER
 flushDiskType = ASYNC_FLUSH
-brokerIP1=47.95.216.30
-brokerIP2=47.95.216.30
+brokerIP1=127.0.0.1
+brokerIP2=127.0.0.1
 # 将namesrvAddr设置在configfile中
-namesrvAddr=47.95.216.30:9876
+namesrvAddr=127.0.0.1:9876
 ● 增加
-brokerIP1=47.95.216.30
-brokerIP2=47.95.216.30
+brokerIP1=127.0.0.1
+brokerIP2=127.0.0.1
 # 将namesrvAddr设置在configfile中
-namesrvAddr=47.95.216.30:9876
+namesrvAddr=127.0.0.1:9876
 ● 启动namesrc时指定配置文件
 nohup sh bin/mqbroker -n localhost:9876 -c conf/broker.conf &

@@ -12,7 +12,7 @@ public class Consumer {
     @Test
     public void test() throws IOException, TimeoutException {
 //        ConnectionFactory connectionFactory = new ConnectionFactory();
-//        connectionFactory.setHost("47.95.216.30");
+//        connectionFactory.setHost("127.0.0.1");
 //        connectionFactory.setPort(5672);
 //        connectionFactory.setVirtualHost("/ems");
 //        connectionFactory.setUsername("guest");

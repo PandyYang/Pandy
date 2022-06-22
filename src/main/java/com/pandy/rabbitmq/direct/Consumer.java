@@ -7,9 +7,9 @@ import java.io.IOException;
 
 public class Consumer {
     public static void main(String[] args) throws IOException {
-        
+
         String exchangeName = "log_direct";
-        
+
         Connection connection = RabbitMQUtil.getConnection();
         Channel channel = connection.createChannel();
 
@@ -26,7 +26,7 @@ public class Consumer {
         channel.basicConsume(queue, true, new DefaultConsumer(channel) {
             @Override
             public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
-                System.out.println("消费者1" + new String(body));
+                System.out.println("消费者0" + new String(body));
             }
         });
     }

@@ -15,7 +15,7 @@ public class BroadcastConsumer {
         DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("example_group_name");
         consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
         // 设置为广播模式
-        consumer.setNamesrvAddr("47.95.216.30:9876");
+        consumer.setNamesrvAddr("127.0.0.1:9876");
         consumer.setMessageModel(MessageModel.BROADCASTING);
         consumer.subscribe("TopicTest", "TagA || TagC || TagD");
         consumer.registerMessageListener(new MessageListenerConcurrently() {

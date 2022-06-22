@@ -11,7 +11,7 @@ import java.nio.charset.StandardCharsets;
 public class OneWayProducer {
     public static void main(String[] args) throws Exception {
         DefaultMQProducer producer = new DefaultMQProducer("please_rename_unique_group_name");
-        producer.setNamesrvAddr("47.95.216.30:9876");
+        producer.setNamesrvAddr("127.0.0.1:9876");
         producer.start();
         for (int i = 0; i < 100; i++) {
             Message msg = new Message("TopicTest", "TagA", ("Hello RocketMQ" + i).getBytes(StandardCharsets.UTF_8));

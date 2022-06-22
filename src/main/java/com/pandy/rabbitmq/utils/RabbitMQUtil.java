@@ -13,9 +13,9 @@ public class RabbitMQUtil {
 
     static {
         connectionFactory = new ConnectionFactory();
-        connectionFactory.setHost("47.95.216.30");
+        connectionFactory.setHost("127.0.0.1");
         connectionFactory.setPort(5672);
-        connectionFactory.setVirtualHost("/ems");
+        connectionFactory.setVirtualHost("/");
         connectionFactory.setUsername("guest");
         connectionFactory.setPassword("guest");
     }
@@ -23,7 +23,7 @@ public class RabbitMQUtil {
     //定义提供创建链接的方法
     public static Connection getConnection() {
 //        ConnectionFactory connectionFactory = new ConnectionFactory();
-//        connectionFactory.setHost("47.95.216.30");
+//        connectionFactory.setHost("127.0.0.1");
 //        connectionFactory.setPort(5672);
 //        connectionFactory.setVirtualHost("/ems");
 //        connectionFactory.setUsername("guest");

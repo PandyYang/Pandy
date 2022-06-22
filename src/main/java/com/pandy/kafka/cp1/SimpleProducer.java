@@ -25,7 +25,7 @@ public class SimpleProducer {
         currentThread.setContextClassLoader(savedClassLoader);
 
         //Assign localhost id
-        props.put("bootstrap.servers", "47.95.216.30:9092");
+        props.put("bootstrap.servers", "127.0.0.1:9092");
 
         //Set acknowledgements for producer requests.
         props.put("acks", "all");

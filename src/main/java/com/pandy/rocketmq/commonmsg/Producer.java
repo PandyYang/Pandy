@@ -17,7 +17,7 @@ public class Producer {
 		DefaultMQProducer producer = new DefaultMQProducer("ProducerGroupName");
 		// 指定nameServer的地址
 //		producer.setNamesrvAddr("192.168.218.129:9876;192.168.218.130:9876");
-		producer.setNamesrvAddr("47.95.216.30:9876");
+		producer.setNamesrvAddr("127.0.0.1:9876");
 		// 启动实例
 		producer.start();
 

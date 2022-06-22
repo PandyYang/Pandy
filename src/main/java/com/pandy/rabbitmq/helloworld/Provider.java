@@ -19,7 +19,7 @@ public class Provider {
 //        // 创建链接mq的链接工厂对象
 //        ConnectionFactory connectionFactory = new ConnectionFactory();
 //        // 设置链接rabbitmq主机
-//        connectionFactory.setHost("47.95.216.30");
+//        connectionFactory.setHost("127.0.0.1");
 //        //设置端口号
 //        connectionFactory.setPort(5672);
 //        //设置链接哪个虚拟主机

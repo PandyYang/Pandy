@@ -14,7 +14,7 @@ import java.util.concurrent.CountDownLatch;
 public class AsyncProducer {
     public static void main(String[] args) throws Exception {
         DefaultMQProducer producer = new DefaultMQProducer("please_rename_unique_group_name");
-        producer.setNamesrvAddr("47.95.216.30:9876");
+        producer.setNamesrvAddr("127.0.0.1:9876");
         producer.start();
         producer.setRetryTimesWhenSendAsyncFailed(0);
         int messageCount = 100;
