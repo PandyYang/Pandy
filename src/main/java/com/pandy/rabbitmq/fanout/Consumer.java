@@ -13,6 +13,7 @@ public class Consumer {
     public static void main(String[] args) throws IOException {
         Connection connection = RabbitMQUtil.getConnection();
 
+        assert connection != null;
         Channel channel = connection.createChannel();
 
         // 通道绑定交换机
