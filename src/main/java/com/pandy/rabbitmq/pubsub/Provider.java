@@ -1,4 +1,4 @@
-package com.pandy.rabbitmq.fanout;
+package com.pandy.rabbitmq.pubsub;
 
 import com.pandy.rabbitmq.utils.RabbitMQUtil;
 import com.rabbitmq.client.Channel;
@@ -18,6 +18,12 @@ import java.nio.charset.StandardCharsets;
  * 比如：
  * 它包含一个生产者、多个消费者、两个队列和一个交换机。两个消费者同时绑定到不同的队列上去，
  * 两个队列绑定到交换机上去，生产者通过发送消息到交换机，所有消费者接收并消费消息。
+ *
+ * exchange类型
+ * ➢ Fanout：广播，将消息交给所有绑定到交换机的队列
+ * ➢ Direct：定向，把消息交给符合指定routing key 的队列
+ * ➢ Topic：通配符，把消息交给符合routing pattern（路由模式） 的队列
+ * ➢ Headers：参数匹配，用得少
  */
 public class Provider {
 
@@ -32,6 +38,8 @@ public class Provider {
         channel.exchangeDeclare(EXCHANGE_NAME, "fanout");
 
         for (int i = 0; i < 10; i++) {
+
+            // routingKey设置为"", 因为fanout需要给所有的队列发送消息，所以不需要特别指定
             channel.basicPublish(EXCHANGE_NAME,
                     "",
                     null,

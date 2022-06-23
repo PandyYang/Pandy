@@ -1,4 +1,4 @@
-package com.pandy.rabbitmq.fanout;
+package com.pandy.rabbitmq.pubsub;
 
 import com.pandy.rabbitmq.utils.RabbitMQUtil;
 import com.rabbitmq.client.*;
@@ -9,7 +9,7 @@ import java.io.IOException;
  * @Author Pandy
  * @Date 2021/8/2 23:12
  */
-public class Consumer {
+public class Consumer2 {
     public static void main(String[] args) throws IOException {
         Connection connection = RabbitMQUtil.getConnection();
 

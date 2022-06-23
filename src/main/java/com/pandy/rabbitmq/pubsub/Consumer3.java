@@ -1,4 +1,4 @@
-package com.pandy.rabbitmq.fanout;
+package com.pandy.rabbitmq.pubsub;
 
 import com.pandy.rabbitmq.utils.RabbitMQUtil;
 import com.rabbitmq.client.*;
