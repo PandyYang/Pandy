@@ -1,4 +1,4 @@
-package com.pandy.base.juc.waitnotify;
+package com.pandy.base.thread.waitnotify;
 
 import java.util.ArrayList;
 import java.util.List;
