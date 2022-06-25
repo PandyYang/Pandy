@@ -15,7 +15,7 @@ import java.io.IOException;
  * 客户端生产消息 在一个队列中有两个消费者C1和C2，那么消费者之间对于同一个消息的关系是竞争的关系
  * 对于任务过重或任务较多情况使用工作队列可以提高任务处理的速度。例如：短信服务部署多个，只需要有一个节点成功发送即可
  */
-public class Provider2 {
+public class Provider {
     public static void main(String[] args) throws IOException, InterruptedException {
         Connection connection = RabbitMQUtil.getConnection();
         assert connection != null;
@@ -69,7 +69,6 @@ public class Provider2 {
 
             // 同步确认机制
             channel.waitForConfirms();
-
         }
 
         // 批量同步
