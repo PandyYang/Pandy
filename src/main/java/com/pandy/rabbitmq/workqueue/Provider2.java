@@ -2,6 +2,7 @@ package com.pandy.rabbitmq.workqueue;
 
 import com.pandy.rabbitmq.utils.RabbitMQUtil;
 import com.rabbitmq.client.Channel;
+import com.rabbitmq.client.ConfirmListener;
 import com.rabbitmq.client.Connection;
 
 import java.io.IOException;
@@ -35,6 +36,24 @@ public class Provider2 {
                 null
         );
 
+        // 异步确认机制
+        /**
+         * 实现此接口以便收到确认事件的通知。 Acks 代表消息处理成功；
+         * Nacks 表示代理丢失的消息。请注意，丢失的消息仍可能已传递给消费者，
+         * 但代理不能保证这一点。对于面向 lambda 的语法，请使用ConfirmCallback 。
+         */
+//        channel.addConfirmListener(new ConfirmListener() {
+//            @Override
+//            public void handleAck(long deliveryTag, boolean multiple) throws IOException {
+//
+//            }
+//
+//            @Override
+//            public void handleNack(long deliveryTag, boolean multiple) throws IOException {
+//
+//            }
+//        });
+
         for (int i = 0; i < 10; i++) {
             // 生产消息
             channel.basicPublish(
@@ -48,9 +67,13 @@ public class Provider2 {
                     ( i + "hello work queue").getBytes()
             );
 
+            // 同步确认机制
             channel.waitForConfirms();
+
         }
 
+        // 批量同步
+        channel.waitForConfirmsOrDie();
         RabbitMQUtil.close(channel, connection);
     }
 }
