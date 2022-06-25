@@ -15,10 +15,12 @@ import java.io.IOException;
  * 对于任务过重或任务较多情况使用工作队列可以提高任务处理的速度。例如：短信服务部署多个，只需要有一个节点成功发送即可
  */
 public class Provider2 {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         Connection connection = RabbitMQUtil.getConnection();
         assert connection != null;
         Channel channel = connection.createChannel();
+
+        channel.confirmSelect();
 
         channel.queueDeclare(
                 // 队列名称
@@ -45,6 +47,8 @@ public class Provider2 {
                     // 传递的消息字节数组
                     ( i + "hello work queue").getBytes()
             );
+
+            channel.waitForConfirms();
         }
 
         RabbitMQUtil.close(channel, connection);
