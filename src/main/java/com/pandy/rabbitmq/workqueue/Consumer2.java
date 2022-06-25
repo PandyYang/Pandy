@@ -34,7 +34,7 @@ public class Consumer2 {
         // 参数1 队列名称
         // 参数2 消息自动确认机制
         channel.basicConsume("work",
-                true,
+                false,
                 new DefaultConsumer(channel) {
                     @Override
                     public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
