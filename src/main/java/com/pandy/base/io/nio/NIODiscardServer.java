@@ -1,7 +1,5 @@
 package com.pandy.base.io.nio;
 
-import lombok.extern.slf4j.Slf4j;
-
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.channels.Selector;
@@ -13,7 +11,6 @@ import java.nio.channels.ServerSocketChannel;
  * selector
  * buffer
  */
-@Slf4j
 public class NIODiscardServer {
     public static void startServer() throws IOException {
         // 获取选择器

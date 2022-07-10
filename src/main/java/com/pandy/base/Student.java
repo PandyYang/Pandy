@@ -1,7 +1,5 @@
 package com.pandy.base;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
 
 public class Student {
     private String name;

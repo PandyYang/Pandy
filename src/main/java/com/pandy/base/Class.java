@@ -1,8 +1,5 @@
 package com.pandy.base;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-
 import java.util.ArrayList;
 
 public class Class {
