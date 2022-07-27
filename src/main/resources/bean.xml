@@ -7,16 +7,16 @@
             http://www.springframework.org/schema/beans
             http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 
-    <bean id="beanPostProcessor" class="com.pandy.spring.bean.MyBeanPostProcessor">
+    <bean id="beanPostProcessor" class="com.pandy.framework.spring.bean.MyBeanPostProcessor">
     </bean>
 
-    <bean id="instantiationAwareBeanPostProcessor" class="com.pandy.spring.bean.MyInstantiationAwareBeanPostProcessor">
+    <bean id="instantiationAwareBeanPostProcessor" class="com.pandy.framework.spring.bean.MyInstantiationAwareBeanPostProcessor">
     </bean>
 
-    <bean id="beanFactoryPostProcessor" class="com.pandy.spring.bean.MyBenFactoryPostProcessor">
+    <bean id="beanFactoryPostProcessor" class="com.pandy.framework.spring.bean.MyBenFactoryPostProcessor">
     </bean>
 
-    <bean id="lifeTime" class="com.pandy.spring.bean.LifeTime" init-method="myInit"
+    <bean id="lifeTime" class="com.pandy.framework.spring.bean.LifeTime" init-method="myInit"
           destroy-method="myDestroy" scope="singleton" p:name="张三" p:address="广州"
           p:phone="15900000000" />
 

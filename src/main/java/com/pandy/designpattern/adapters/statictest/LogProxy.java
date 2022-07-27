@@ -1,7 +1,5 @@
 package com.pandy.designpattern.adapters.statictest;
 
-import com.pandy.base.test.ForTest.User;
-
 /**
  * @author: Pandy
  * @create: 2022/3/19

@@ -1,4 +1,4 @@
-package com.pandy.base.thread.threadlocal;
+package com.pandy.java.thread.threadlocal;
 
 import junit.framework.TestCase;
 import org.junit.Test;
