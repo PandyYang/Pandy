@@ -1,4 +1,4 @@
-package com.pandy.test.employee;
+package com.pandy.test.jsonParseObj;
 
 import java.io.Serializable;
 import java.util.List;

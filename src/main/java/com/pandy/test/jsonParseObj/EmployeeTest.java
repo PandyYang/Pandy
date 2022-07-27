@@ -1,4 +1,4 @@
-package com.pandy.test.employee;
+package com.pandy.test.jsonParseObj;
 
 import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.databind.ObjectMapper;

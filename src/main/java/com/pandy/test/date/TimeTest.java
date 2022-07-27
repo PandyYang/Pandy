@@ -1,4 +1,4 @@
-package com.pandy.test;
+package com.pandy.test.date;
 
 import java.time.Duration;
 import java.time.Instant;
