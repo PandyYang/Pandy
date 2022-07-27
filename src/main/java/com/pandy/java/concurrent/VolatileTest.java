@@ -4,18 +4,17 @@ package com.pandy.java.concurrent;
  * @Author Pandy
  * @Date 2021/7/18 8:48
  * volatile变量自增运算测试
- *
- *
+ * <p>
+ * <p>
  * volatile的语义： 1.内存可见性 2.禁止指令重排序优化
  */
 public class VolatileTest {
+    private static final int THREADS_COUNT = 20;
     public static volatile int race = 0;
 
     public static void increase() {
         race++;
     }
-
-    private static final int THREADS_COUNT = 20;
 
     public static void main(String[] args) {
         Thread[] threads = new Thread[THREADS_COUNT];

@@ -2,7 +2,6 @@ package com.pandy.designpattern.adapters.dynamic;
 
 import com.pandy.designpattern.adapters.statictest.UserService;
 import com.pandy.designpattern.adapters.statictest.UserServiceImpl;
-import com.pandy.elasticsearch.model.User;
 
 /**
  * @author: Pandy

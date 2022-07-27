@@ -18,7 +18,7 @@ public class Main {
         bookShelf.appendBook(new Book("源氏物语"));
         Iterator iterator = bookShelf.iterator();
         while (iterator.hasNext()) {
-            Book book =  (Book)iterator.next();
+            Book book = (Book) iterator.next();
             System.out.println(book.getName());
         }
     }

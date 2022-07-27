@@ -7,6 +7,11 @@ import java.util.List;
  * 回溯法求解元素的全排类问题
  */
 public class Permute {
+    public static void main(String[] args) {
+        Permute permute = new Permute();
+        System.out.println(permute.premute(new int[]{1, 2, 3}));
+    }
+
     public List<List<Integer>> premute(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
         List<Integer> list = new ArrayList<>();
@@ -29,10 +34,5 @@ public class Permute {
                 list.remove(list.size() - 1); // 往上退一层
             }
         }
-    }
-
-    public static void main(String[] args) {
-        Permute permute = new Permute();
-        System.out.println(permute.premute(new int[]{1, 2, 3}));
     }
 }

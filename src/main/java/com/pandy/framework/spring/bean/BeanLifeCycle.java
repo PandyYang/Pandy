@@ -10,6 +10,6 @@ public class BeanLifeCycle {
         LifeTime lifeTime = factory.getBean("lifeTime", LifeTime.class);
         System.out.println(lifeTime);
         System.out.println("关闭容器");
-        ((ClassPathXmlApplicationContext)factory).registerShutdownHook();
+        ((ClassPathXmlApplicationContext) factory).registerShutdownHook();
     }
 }

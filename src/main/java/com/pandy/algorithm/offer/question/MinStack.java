@@ -9,6 +9,15 @@ public class MinStack {
     Stack<Integer> dataStack = new Stack<>();
     Stack<Integer> minStack = new Stack<>();
 
+    public static void main(String[] args) {
+        MinStack minStack = new MinStack();
+        minStack.push(1);
+        minStack.push(2);
+        minStack.push(3);
+        minStack.push(4);
+        minStack.push(5);
+    }
+
     public void push(int node) {
         // 将数据压入数据栈
         dataStack.push(node);
@@ -35,14 +44,5 @@ public class MinStack {
 
     public int min() {
         return minStack.peek();
-    }
-
-    public static void main(String[] args) {
-        MinStack minStack = new MinStack();
-        minStack.push(1);
-        minStack.push(2);
-        minStack.push(3);
-        minStack.push(4);
-        minStack.push(5);
     }
 }

@@ -1,6 +1,7 @@
 package com.pandy.algorithm.offer.question;
+
 public class FindKthToTail {
-    public ListNode kth (ListNode pHead, int k) {
+    public ListNode kth(ListNode pHead, int k) {
         // write code here
         if (pHead == null) return null;
         if (k == 0) return null;

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 /**
  * @author: Pandy
  * @create: 2022/6/18
- *
+ * <p>
  * 并行发送文件 100000条
  **/
 public class SendMsg {
@@ -32,6 +32,7 @@ public class SendMsg {
 
     /**
      * 使用并行流 开启50个线程处理任务
+     *
      * @throws Exception
      */
     public static void sendMsg() throws Exception {
@@ -53,14 +54,13 @@ public class SendMsg {
         FileWriter fileWriter = new FileWriter(file2);
 
 
-
         list.parallelStream().forEach(s -> {
             try {
-                fileWriter.write("当前处理短信 " + s + " 当前执行的线程为" +  Thread.currentThread().getName() + "\n");
+                fileWriter.write("当前处理短信 " + s + " 当前执行的线程为" + Thread.currentThread().getName() + "\n");
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            System.out.println("当前处理短信 " + s + " 当前执行的线程为" +  Thread.currentThread().getName());
+            System.out.println("当前处理短信 " + s + " 当前执行的线程为" + Thread.currentThread().getName());
         });
 
         fileWriter.flush();

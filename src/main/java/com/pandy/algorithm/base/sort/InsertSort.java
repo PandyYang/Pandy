@@ -10,8 +10,8 @@ public class InsertSort {
             int tmp = arr[i];
 
             int j = i;
-            while (j > 0 && tmp < arr[j-1]) {
-                arr[j] = arr[j-1];
+            while (j > 0 && tmp < arr[j - 1]) {
+                arr[j] = arr[j - 1];
                 j--;
             }
 

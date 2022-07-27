@@ -1,6 +1,9 @@
 package com.pandy.algorithm;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Set;
 
 /**
  * @author Pandy
@@ -11,6 +14,7 @@ public class Solution {
     /**
      * 判断是够是回文字符串
      * 数学
+     *
      * @param x
      * @return
      */
@@ -30,20 +34,8 @@ public class Solution {
     }
 
     /**
-     * 判断字符是否唯一
-     * @param astr
-     * @return
-     */
-    public boolean isUnique(String astr) {
-        Set set = new HashSet();
-        for (char c : astr.toCharArray()) {
-            set.add(c);
-        }
-        return set.size() == astr.length();
-    }
-
-    /**
      * 字符串重新排列后 能否成为另一个字符串
+     *
      * @param s1
      * @param s2
      * @return
@@ -54,7 +46,7 @@ public class Solution {
         for (char c : s1.toCharArray()) {
             if (map1.containsKey(c)) {
                 map1.put(c, map1.get(c) + 1);
-            }else {
+            } else {
                 map1.put(c, 1);
             }
         }
@@ -62,7 +54,7 @@ public class Solution {
         for (char c : s2.toCharArray()) {
             if (map2.containsKey(c)) {
                 map2.put(c, map2.get(c) + 1);
-            }else {
+            } else {
                 map2.put(c, 1);
             }
         }
@@ -71,6 +63,7 @@ public class Solution {
 
     /**
      * url化
+     *
      * @param S
      * @param length
      * @return
@@ -91,15 +84,15 @@ public class Solution {
             }
         }
 
-        StringBuilder stringBuilder =new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder();
 
         int flag = 0;
         for (Object c : l) {
             final String s = String.valueOf(c);
             if (s.equals(" ")) {
-                flag ++;
+                flag++;
                 stringBuilder.append("%20");
-            }else {
+            } else {
                 stringBuilder.append(s);
             }
         }
@@ -110,5 +103,19 @@ public class Solution {
         System.out.println(isPalindrome(433323334));
         System.out.println(CheckPermutation("abcc", "ccba1"));
         System.out.println(replaceSpaces("LqyuIZCuyRyvllekBuYNUZDrCzHCXeeUmZAfgIvHxzFgLCkLLzDBdfJh", 56));
+    }
+
+    /**
+     * 判断字符是否唯一
+     *
+     * @param astr
+     * @return
+     */
+    public boolean isUnique(String astr) {
+        Set set = new HashSet();
+        for (char c : astr.toCharArray()) {
+            set.add(c);
+        }
+        return set.size() == astr.length();
     }
 }

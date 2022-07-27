@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class PasswordValid {
 
     public static boolean hashDuplicatedString(String s) {
-        for (int i = 0; i < s.length()-3; i++) {
-            if (s.substring(i+3).contains(s.substring(i, i+3))) {
+        for (int i = 0; i < s.length() - 3; i++) {
+            if (s.substring(i + 3).contains(s.substring(i, i + 3))) {
                 return true;
             }
         }

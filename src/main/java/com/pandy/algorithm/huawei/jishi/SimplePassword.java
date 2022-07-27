@@ -15,16 +15,16 @@ public class SimplePassword {
                     continue;
                 }
                 if (chars[i] >= 'A' && chars[i] < 'Z') {
-                    stringBuilder.append(String.valueOf((char)(chars[i] +1)).toLowerCase());
+                    stringBuilder.append(String.valueOf((char) (chars[i] + 1)).toLowerCase());
                     continue;
                 }
                 if (chars[i] >= '0' && chars[i] <= '9') {
-                    stringBuilder.append(String.valueOf(chars[i]));
+                    stringBuilder.append(chars[i]);
                 }
                 switch (chars[i]) {
-                    case('1'):
+                    case ('1'):
                         break;
-                    case('a'):
+                    case ('a'):
                     case ('b'):
                     case ('c'):
                         stringBuilder.append('2');
@@ -68,7 +68,7 @@ public class SimplePassword {
                         break;
                 }
             }
-            System.out.println(stringBuilder.toString());
+            System.out.println(stringBuilder);
         }
     }
 }

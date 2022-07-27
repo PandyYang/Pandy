@@ -1,7 +1,5 @@
 package com.pandy.algorithm.offer.question;
 
-import java.util.Arrays;
-
 /**
  * 打印1到最大的n位数
  */
@@ -15,36 +13,6 @@ public class PrintToMaxOfNDigits {
         printToMaxOfNDigits.print1ToMaxOfNDigits2(2);
     }
 
-    public void print(int n) {
-        int[] arr = new int[n];
-        if (n <= 0)
-            return;
-        printArray(arr, 0);
-    }
-
-    private void printArray(int[] arr, int n) {
-        for (int i = 0; i < 10; i++) {
-            if (n != arr.length) {
-                arr[n] = i;
-                printArray(arr, n+1);
-            } else {
-                boolean falg = false;
-                for(int j = 0; j < arr.length; j++) {
-                    if(arr[j] != 0) {
-                        System.out.print(arr[j]);
-                        if(!falg)
-                            falg = true;
-                    } else {
-                        if(falg)
-                            System.out.print(arr[j]);
-                    }
-                }
-                System.out.println();
-                return ;
-            }
-        }
-    }
-
     public static void printOneToNthDigits(int n) {
         // 输入的数字不能为小于1
         if (n < 1) {
@@ -54,6 +22,7 @@ public class PrintToMaxOfNDigits {
         int[] arr = new int[n];
         printOneToNthDigits(0, arr);
     }
+
     /**
      * 输入数字n，按顺序打印出从1最大的n位十进制数。
      *
@@ -73,6 +42,7 @@ public class PrintToMaxOfNDigits {
             }
         }
     }
+
     /**
      * 输入数组的元素，从左到右，从第一个非0值到开始输出到最后的元素。
      *
@@ -95,16 +65,46 @@ public class PrintToMaxOfNDigits {
     }
 
     public static int[] printNumbers(int n) {
-        int end = (int)Math.pow(10,n) - 1;
-        int[] array =  new int[end];
-        for (int i = 0;i < end;i ++) {
+        int end = (int) Math.pow(10, n) - 1;
+        int[] array = new int[end];
+        for (int i = 0; i < end; i++) {
             array[i] = i + 1;
         }
         return array;
     }
 
+    public void print(int n) {
+        int[] arr = new int[n];
+        if (n <= 0)
+            return;
+        printArray(arr, 0);
+    }
+
+    private void printArray(int[] arr, int n) {
+        for (int i = 0; i < 10; i++) {
+            if (n != arr.length) {
+                arr[n] = i;
+                printArray(arr, n + 1);
+            } else {
+                boolean falg = false;
+                for (int j = 0; j < arr.length; j++) {
+                    if (arr[j] != 0) {
+                        System.out.print(arr[j]);
+                        if (!falg)
+                            falg = true;
+                    } else {
+                        if (falg)
+                            System.out.print(arr[j]);
+                    }
+                }
+                System.out.println();
+                return;
+            }
+        }
+    }
+
     public void print1ToMaxOfNDigits2(int n) {
-        if(n < 1){
+        if (n < 1) {
             return;
         }
         char[] number = new char[n];
@@ -112,7 +112,7 @@ public class PrintToMaxOfNDigits {
             number[i] = '0';
         }
         int count = 0;
-        while(incrementNumber(number,n)){
+        while (incrementNumber(number, n)) {
             printNumber(number);
             count++;
         }
@@ -122,24 +122,25 @@ public class PrintToMaxOfNDigits {
     private void printNumber(char[] num) {
         StringBuilder sb = new StringBuilder();
         boolean flag = false;
-        for(int i = 0 ; i < num.length; i++) {
-            if(flag){
+        for (int i = 0; i < num.length; i++) {
+            if (flag) {
                 sb.append(num[i]);
-            }else if(num[i] != '0'){
+            } else if (num[i] != '0') {
                 sb.append(num[i]);
                 flag = true;
             }
         }
         System.err.println(sb);
     }
-    private  boolean incrementNumber(char[] number,int n ) {
-        int cur = n-1;
+
+    private boolean incrementNumber(char[] number, int n) {
+        int cur = n - 1;
         while (cur >= 0) {
             char num = number[cur];
-            if( num < '9'){
-                number[cur] = (char)(num + 1);
+            if (num < '9') {
+                number[cur] = (char) (num + 1);
                 return true;
-            }else if(num == '9'){
+            } else if (num == '9') {
                 number[cur] = '0';
                 cur--;
             }

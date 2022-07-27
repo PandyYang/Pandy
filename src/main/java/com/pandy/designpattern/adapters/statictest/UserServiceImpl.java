@@ -4,7 +4,7 @@ package com.pandy.designpattern.adapters.statictest;
  * @author: Pandy
  * @create: 2022/3/19
  **/
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
     @Override
     public void save() {
         System.out.println("保存用户");

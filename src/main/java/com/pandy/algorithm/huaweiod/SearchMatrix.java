@@ -7,7 +7,7 @@ public class SearchMatrix {
         Scanner in = new Scanner(System.in);
         while (in.hasNext()) {
             int num = in.nextInt();
-            int [][] res = new int[num][];
+            int[][] res = new int[num][];
             int maxSide = 0;
             for (int i = 0; i < num; i++) {
                 String next = in.next();

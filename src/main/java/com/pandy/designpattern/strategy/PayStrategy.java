@@ -4,7 +4,8 @@ public interface PayStrategy {
 
     /**
      * 共同方法行为
+     *
      * @return
      */
-    public String toPay();
+    String toPay();
 }

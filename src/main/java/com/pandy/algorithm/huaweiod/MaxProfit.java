@@ -10,11 +10,9 @@ public class MaxProfit {
             int[] trans = trans(s);
             int[] change = new int[trans.length];
             int maxProfit = 0;
-            for (int i = 1; i < trans.length; i++)
-            {
+            for (int i = 1; i < trans.length; i++) {
                 change[i] = trans[i] - trans[i - 1];
-                if (change[i] > 0)
-                {
+                if (change[i] > 0) {
                     maxProfit += change[i];
                 }
             }

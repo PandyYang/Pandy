@@ -4,9 +4,9 @@ package com.pandy.designpattern.template;
  * @author Pandy
  * @date 2021/3/5 16:20
  */
-public class CharDisplay extends AbstractDisplay{
+public class CharDisplay extends AbstractDisplay {
 
-    private char ch;
+    private final char ch;
 
     public CharDisplay(char ch) {
         this.ch = ch;

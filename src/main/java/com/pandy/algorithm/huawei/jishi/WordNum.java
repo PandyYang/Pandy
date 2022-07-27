@@ -1,7 +1,5 @@
 package com.pandy.algorithm.huawei.jishi;
 
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -18,7 +16,7 @@ public class WordNum {
         int flag = 0;
         for (char aChar : chars) {
             if (s1.equals(String.valueOf(aChar))) {
-                flag ++;
+                flag++;
             }
         }
         System.out.println(flag);

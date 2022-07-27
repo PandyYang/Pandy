@@ -1,44 +1,44 @@
 {
-  "real":{
-    "open":true,
-    "rob":{
-      "open":true
+  "real": {
+    "open": true,
+    "rob": {
+      "open": true
     },
-    "dispatch":{
-      "open":true
+    "dispatch": {
+      "open": true
     },
-    "downgrade":{
-      "open":true,
-      "car_type_list":"1,2,4"
+    "downgrade": {
+      "open": true,
+      "car_type_list": "1,2,4"
     },
-    "area":{
-      "del_fence_favorite":true,
-      "del_fence_forbid":true,
-      "open_favorite_area":false,
-      "open_forbid_area":false
+    "area": {
+      "del_fence_favorite": true,
+      "del_fence_forbid": true,
+      "open_favorite_area": false,
+      "open_forbid_area": false
     }
   },
-  "receiving_strategy":{
-    "peak_high_unit_price":false,
-    "peak_more_orders":true,
-    "flat_quantity_price_balance":false,
-    "flat_more_orders":true
+  "receiving_strategy": {
+    "peak_high_unit_price": false,
+    "peak_more_orders": true,
+    "flat_quantity_price_balance": false,
+    "flat_more_orders": true
   },
-  "incidentally":{
-    "open":false,
-    "range":{
-      "percentage":0
+  "incidentally": {
+    "open": false,
+    "range": {
+      "percentage": 0
     },
-    "poi":{
-      "name":"",
-      "poi_id":"",
-      "longitude":0,
-      "latitude":0,
-      "address":""
+    "poi": {
+      "name": "",
+      "poi_id": "",
+      "longitude": 0,
+      "latitude": 0,
+      "address": ""
     }
   },
-  "speedup_coupon":{
-    "open":true,
-    "speedup_type":3
+  "speedup_coupon": {
+    "open": true,
+    "speedup_type": 3
   }
 }

@@ -16,7 +16,7 @@ public class Test2 {
         List<String> list = new ArrayList<>();
         for (Integer a : list1) {
             for (Integer b : list2) {
-                if (a <=b && b-a <= r) {
+                if (a <= b && b - a <= r) {
                     list.add(a + " " + b);
 //                    System.out.println(a + " " + b);
                     break;

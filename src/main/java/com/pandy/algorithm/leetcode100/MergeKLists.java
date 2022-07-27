@@ -26,7 +26,7 @@ public class MergeKLists {
         });
 
         //将所有元素都加入优先队列
-        for (ListNode list: lists) {
+        for (ListNode list : lists) {
             if (list == null) continue;
             pq.add(list);
         }

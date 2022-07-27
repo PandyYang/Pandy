@@ -13,9 +13,9 @@ public class Bounce {
             double high = i;
             for (int j = 0; j < 4; j++) {
                 high += i;
-                i = i/2.0;
+                i = i / 2.0;
             }
-            i = i/2.0;
+            i = i / 2.0;
             System.out.println(high);
             System.out.println(i);
         }

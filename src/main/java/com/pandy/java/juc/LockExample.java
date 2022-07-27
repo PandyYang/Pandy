@@ -8,14 +8,21 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * @Author Pandy
  * @Date 2021/7/19 23:45
- *
+ * <p>
  * ReentrantLock基于JDK实现
  * 可以中断
  * 默认非公平
  */
 public class LockExample {
 
-    private Lock lock = new ReentrantLock();
+    private final Lock lock = new ReentrantLock();
+
+    public static void main(String[] args) {
+        LockExample lockExample = new LockExample();
+        ExecutorService executorService = Executors.newCachedThreadPool();
+        executorService.execute(() -> lockExample.func());
+        executorService.execute(() -> lockExample.func());
+    }
 
     public void func() {
         lock.lock();
@@ -26,12 +33,5 @@ public class LockExample {
         } finally {
             lock.unlock();
         }
-    }
-
-    public static void main(String[] args) {
-        LockExample lockExample = new LockExample();
-        ExecutorService executorService = Executors.newCachedThreadPool();
-        executorService.execute(() -> lockExample.func());
-        executorService.execute(() -> lockExample.func());
     }
 }

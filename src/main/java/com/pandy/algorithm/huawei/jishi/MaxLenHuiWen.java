@@ -32,19 +32,19 @@ public class MaxLenHuiWen {
         in.close();
     }
 
-    public static int getNumber(String str){
+    public static int getNumber(String str) {
         int result = 1;
         //将字符串反转
         StringBuffer sb = new StringBuffer(str);
         String temp = sb.reverse().toString();
         //获取所有子串，查看翻转后的字符串是否包含该子串
-        for(int i = temp.length(); i >= 1 ;i--){ // 降序
+        for (int i = temp.length(); i >= 1; i--) { // 降序
             //i为子串的长度
-            for(int j = 0; j <= temp.length()-i;j++){ // 升序
+            for (int j = 0; j <= temp.length() - i; j++) { // 升序
                 // 子串长度
-                String tempSubString = temp.substring(j,j + i);
+                String tempSubString = temp.substring(j, j + i);
                 // 判断是否包含串子串
-                if(str.contains(tempSubString)){
+                if (str.contains(tempSubString)) {
                     return i;
                 }
             }

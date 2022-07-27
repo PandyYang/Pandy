@@ -12,7 +12,7 @@ public class SelectSort {
         for (int i = 0; i < arr.length - 1; i++) {
             int min = i;
             // 每轮需要比较的次数n-i
-            for (int j = i+1; j < arr.length; j++) {
+            for (int j = i + 1; j < arr.length; j++) {
                 if (arr[j] < arr[min]) {
                     min = j;
                 }

@@ -18,7 +18,7 @@ public class Test {
 
     // 暴力法
     public static boolean isPrime(int x) {
-        for (int i = 2; i< x; i++) {
+        for (int i = 2; i < x; i++) {
             if (x % i == 0) {
                 return false;
             }
@@ -32,8 +32,8 @@ public class Test {
         int count = 0;
         for (int i = 2; i < n; i++) {
             if (!isPrime[i]) {
-                count ++;
-                for (int j = i*i;  j< n; j+=i) { // j是合数的标记为
+                count++;
+                for (int j = i * i; j < n; j += i) { // j是合数的标记为
                     isPrime[j] = true;
                 }
             }
@@ -47,9 +47,9 @@ public class Test {
             return 0;
         }
         int i = 0;
-        for (int j = 1;j < nums.length; j++) {
+        for (int j = 1; j < nums.length; j++) {
             if (nums[j] != nums[i]) {
-                i ++;
+                i++;
                 nums[i] = nums[j];
             }
         }

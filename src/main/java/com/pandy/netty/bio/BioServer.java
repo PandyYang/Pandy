@@ -38,25 +38,25 @@ public class BioServer {
     //编写handler方法 与客户端通讯
     public static void handler(Socket socket) {
         byte[] bytes = new byte[1024];
-            try {
-                System.out.println("线程信息 id = " + Thread.currentThread().getId() + "名字是： " + Thread.currentThread().getName());
-                InputStream inputStream = socket.getInputStream();
-                while (true) {
-                    int read = inputStream.read(bytes);
-                    if (read != -1) {
-                        System.out.println(new String(bytes, 0, read));
-                    } else {
-                        break;
-                    }
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }finally {
-                try {
-                    socket.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
+        try {
+            System.out.println("线程信息 id = " + Thread.currentThread().getId() + "名字是： " + Thread.currentThread().getName());
+            InputStream inputStream = socket.getInputStream();
+            while (true) {
+                int read = inputStream.read(bytes);
+                if (read != -1) {
+                    System.out.println(new String(bytes, 0, read));
+                } else {
+                    break;
                 }
             }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                socket.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
+    }
 }

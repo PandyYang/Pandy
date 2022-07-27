@@ -26,8 +26,7 @@ public class StrSort {
         for (int i = 0, j = 0; i < str.length(); i++) {
             if (Character.isLetter(str.charAt(i))) {
                 result.append(letters.get(j++));
-            }
-            else {
+            } else {
                 result.append(str.charAt(i));
             }
         }

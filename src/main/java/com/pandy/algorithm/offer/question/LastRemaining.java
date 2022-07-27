@@ -14,7 +14,7 @@ public class LastRemaining {
         }
         int bt = 0;
         while (list.size() > 1) {
-            bt = (bt + m -1) %list.size();
+            bt = (bt + m - 1) % list.size();
             list.remove(bt);
         }
         return list.size() == 1 ? list.get(0) : -1;

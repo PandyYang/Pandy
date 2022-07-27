@@ -13,7 +13,7 @@ public class Str8Len {
                 while (next.length() % 8 != 0) {
                     next = next + '0';
                 }
-                for (int j = 0; j < next.length(); j+= 8) {
+                for (int j = 0; j < next.length(); j += 8) {
                     System.out.println(next.substring(j, j + 8));
                 }
             }

@@ -11,7 +11,7 @@ public class NumK {
         int mid = arr.length / 2;
         if (k < arr[mid]) {
             // k在左边 递归寻找
-            res += findK(Arrays.copyOfRange(arr , 0, mid), k);
+            res += findK(Arrays.copyOfRange(arr, 0, mid), k);
         } else if (k > arr[mid]) {
             // k在右边递归寻找
             res += findK(Arrays.copyOfRange(arr, mid, arr.length), k);
@@ -26,7 +26,7 @@ public class NumK {
             }
 
             // 从找到位置向左遍历
-            for (int i = mid -1; i>= 0; i--) {
+            for (int i = mid - 1; i >= 0; i--) {
                 if (arr[i] == mid) {
                     res++;
                 } else {

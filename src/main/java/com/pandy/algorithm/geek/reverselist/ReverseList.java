@@ -4,16 +4,6 @@ package com.pandy.algorithm.geek.reverselist;
  * @author Pandy
  */
 public class ReverseList {
-    static class ListNode {
-        private int value;
-        private ListNode next;
-
-        public ListNode(int value, ListNode next) {
-            this.value = value;
-            this.next = next;
-        }
-    }
-
     // 迭代方式
     public static ListNode iterate(ListNode head) {
         ListNode prev = null;
@@ -30,6 +20,15 @@ public class ReverseList {
         return prev;
     }
 
+    public static void main(String[] args) {
+        ListNode node5 = new ListNode(5, null);
+        ListNode node4 = new ListNode(4, node5);
+        ListNode node3 = new ListNode(3, node4);
+        ListNode node2 = new ListNode(2, node3);
+        ListNode node1 = new ListNode(1, node2);
+        System.out.println(iterate(node1));
+    }
+
     // 递归方式
     public ListNode reverseList(ListNode head) {
         if (head == null || head.next == null) {
@@ -42,12 +41,13 @@ public class ReverseList {
         return newHead;
     }
 
-    public static void main(String[] args) {
-        ListNode node5 = new ListNode(5, null);
-        ListNode node4 = new ListNode(4, node5);
-        ListNode node3 = new ListNode(3, node4);
-        ListNode node2 = new ListNode(2, node3);
-        ListNode node1 = new ListNode(1, node2);
-        System.out.println(iterate(node1));
+    static class ListNode {
+        private final int value;
+        private ListNode next;
+
+        public ListNode(int value, ListNode next) {
+            this.value = value;
+            this.next = next;
+        }
     }
 }

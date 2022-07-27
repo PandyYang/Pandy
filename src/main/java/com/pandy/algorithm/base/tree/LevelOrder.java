@@ -20,7 +20,7 @@ public class LevelOrder {
         queue.offer(root);
 
         while (!queue.isEmpty()) {
-                ArrayList<Integer> level = new ArrayList<Integer>();
+            ArrayList<Integer> level = new ArrayList<Integer>();
 
             int levelNum = queue.size();
             for (int i = 0; i < levelNum; i++) {

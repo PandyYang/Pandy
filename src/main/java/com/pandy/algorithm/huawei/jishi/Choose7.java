@@ -13,7 +13,7 @@ public class Choose7 {
                     count++;
                     continue;
                 } else {
-                    if (i!= 0 && i % 7 == 0) {
+                    if (i != 0 && i % 7 == 0) {
                         count++;
                     }
                 }

@@ -6,7 +6,7 @@ public class IsPalindrome {
         char[] chars = sb.toString().toCharArray();
         int i = 0, j = chars.length - 1;
         int length = String.valueOf(num).length();
-        while (i < length/2 && j > length/2) {
+        while (i < length / 2 && j > length / 2) {
             if (chars[i++] == chars[j--]) {
                 continue;
             }
@@ -23,10 +23,10 @@ public class IsPalindrome {
         int cur = 0; //等于是每次取回文最后的数字 再构建一份一样的
         int x = num;
         while (x != 0) {
-            cur = cur * 10 + x%10;
+            cur = cur * 10 + x % 10;
             x /= 10;
         }
-        return cur == num ;
+        return cur == num;
     }
 
     public static void main(String[] args) {

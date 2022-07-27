@@ -6,7 +6,7 @@ public class Replace {
         int len = 0;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] == ' ') {
-                num ++;
+                num++;
             }
         }
         len = num * 2 + arr.length;

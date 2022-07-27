@@ -17,7 +17,7 @@ public class OrderedProducer {
     public static void main(String[] args) throws Exception {
         MQProducer producer = new DefaultMQProducer("example_group_name");
         producer.start();
-        String[] tags = new String[] {"TagA", "TagB", "TagC", "TagD", "TagE"};
+        String[] tags = new String[]{"TagA", "TagB", "TagC", "TagD", "TagE"};
         for (int i = 0; i < 100; i++) {
             int orderId = i % 10;
             Message msg = new Message("TopicTestjjjj", tags[i % tags.length], "KEY" + i,

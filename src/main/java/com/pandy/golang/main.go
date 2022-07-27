@@ -16,7 +16,7 @@ func main() {
 
 	s := "123.321"
 	println(len(s))
-	ss := s[3:len(s)]
+	ss := s[3:]
 	println(ss)
 
 	var ress = ""

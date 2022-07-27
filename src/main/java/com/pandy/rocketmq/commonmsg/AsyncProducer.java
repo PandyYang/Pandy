@@ -23,7 +23,7 @@ public class AsyncProducer {
             try {
                 final int index = i;
                 Message msg = new Message("Jodie_topic_1023", "TagA", "OrderID188"
-                , "Hello World".getBytes(StandardCharsets.UTF_8));
+                        , "Hello World".getBytes(StandardCharsets.UTF_8));
                 producer.send(msg, new SendCallback() {
                     @Override
                     public void onSuccess(SendResult sendResult) {

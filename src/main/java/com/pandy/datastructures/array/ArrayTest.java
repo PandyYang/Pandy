@@ -9,7 +9,41 @@ import java.util.Arrays;
 public class ArrayTest {
 
     /**
+     * 改变矩阵维度
+     *
+     * @param nums
+     * @param r
+     * @param c
+     * @return
+     */
+    public static int[][] matrixReshape(int[][] nums, int r, int c) {
+        int m = nums.length;
+        int n = nums[0].length;
+
+        if (m * n != r * c) {
+            return nums;
+        }
+
+        int[][] reshapedNums = new int[r][c];
+        int index = 0;
+
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                reshapedNums[i][j] = nums[index / n][index % n];
+                index++;
+            }
+        }
+        return reshapedNums;
+    }
+
+    public static void main(String[] args) {
+        int[][] res = new int[][]{{1, 2, 3}, {4, 5, 6}};
+        System.out.println(Arrays.deepToString(matrixReshape(res, 4, 1)));
+    }
+
+    /**
      * 将数组中的0移动到末尾
+     *
      * @param nums
      */
     public void moveZeroes(int[] nums) {
@@ -26,34 +60,8 @@ public class ArrayTest {
     }
 
     /**
-     * 改变矩阵维度
-     * @param nums
-     * @param r
-     * @param c
-     * @return
-     */
-    public static int[][] matrixReshape(int[][] nums, int r, int c) {
-        int m = nums.length;
-        int n = nums[0].length;
-
-        if (m*n != r*c) {
-            return nums;
-        }
-
-        int[][] reshapedNums = new int[r][c];
-        int index = 0;
-
-        for (int i = 0; i < r; i++) {
-            for (int j = 0; j < c; j++) {
-                reshapedNums[i][j] = nums[index/n][index % n];
-                index++;
-            }
-        }
-        return reshapedNums;
-    }
-
-    /**
      * 找出数组中最长的连续1
+     *
      * @param nums
      * @return
      */
@@ -64,10 +72,5 @@ public class ArrayTest {
             max = Math.max(max, cur);
         }
         return max;
-    }
-
-    public static void main(String[] args) {
-        int [][] res = new int[][]{{1,2,3}, {4,5,6}};
-        System.out.println(Arrays.deepToString(matrixReshape(res, 4, 1)));
     }
 }

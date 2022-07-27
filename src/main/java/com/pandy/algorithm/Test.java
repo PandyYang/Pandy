@@ -1,5 +1,6 @@
 package com.pandy.algorithm;
-import java.util.*;
+
+import java.util.Stack;
 
 public class Test {
 
@@ -29,7 +30,7 @@ public class Test {
             String temp = String.valueOf(input.toCharArray()[i]);
             StringBuffer stringBuffer = new StringBuffer(input);
 
-            if (i>=1 && temp.equals("-") && !Character.isDigit(input.toCharArray()[i - 1])) {
+            if (i >= 1 && temp.equals("-") && !Character.isDigit(input.toCharArray()[i - 1])) {
                 stringBuffer.insert(i, "0");
             }
             input = stringBuffer.toString();
@@ -38,7 +39,7 @@ public class Test {
         for (int i = 0; i < input.toCharArray().length; i++) {
             String temp = String.valueOf(input.toCharArray()[i]);
             StringBuffer stringBuffer = new StringBuffer(input);
-            if (temp.equals("-") && !Character.isDigit(input.toCharArray()[i-1])) {
+            if (temp.equals("-") && !Character.isDigit(input.toCharArray()[i - 1])) {
                 stringBuffer.insert(i, "0");
             }
             input = stringBuffer.toString();

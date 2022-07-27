@@ -17,7 +17,7 @@ func main() {
 		set[fUrl] = true
 	}
 
-	for k, _ := range set {
+	for k := range set {
 		fmt.Println(k)
 	}
 

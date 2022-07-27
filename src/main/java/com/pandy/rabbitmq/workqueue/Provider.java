@@ -2,7 +2,6 @@ package com.pandy.rabbitmq.workqueue;
 
 import com.pandy.rabbitmq.utils.RabbitMQUtil;
 import com.rabbitmq.client.Channel;
-import com.rabbitmq.client.ConfirmListener;
 import com.rabbitmq.client.Connection;
 
 import java.io.IOException;
@@ -10,7 +9,7 @@ import java.io.IOException;
 /**
  * @Author Pandy
  * @Date 2021/8/2 21:16
- *
+ * <p>
  * RabbitMQ的Work Queue工作模式
  * 客户端生产消息 在一个队列中有两个消费者C1和C2，那么消费者之间对于同一个消息的关系是竞争的关系
  * 对于任务过重或任务较多情况使用工作队列可以提高任务处理的速度。例如：短信服务部署多个，只需要有一个节点成功发送即可
@@ -64,7 +63,7 @@ public class Provider {
                     // 额外的属性
                     null,
                     // 传递的消息字节数组
-                    ( i + "hello work queue").getBytes()
+                    (i + "hello work queue").getBytes()
             );
 
             // 同步确认机制

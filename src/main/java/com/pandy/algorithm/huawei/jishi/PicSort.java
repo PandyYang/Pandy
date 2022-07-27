@@ -1,6 +1,9 @@
 package com.pandy.algorithm.huawei.jishi;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Scanner;
 
 public class PicSort {
     public static void main(String[] args) {

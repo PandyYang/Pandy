@@ -8,15 +8,15 @@ import java.util.HashMap;
  */
 public class TwoSum {
     public static int[] twoSum(int[] nums, int target) {
-        HashMap map =new HashMap();
+        HashMap map = new HashMap();
         int[] res = new int[2];
-        for (int i = 0; i< nums.length; i++) {
+        for (int i = 0; i < nums.length; i++) {
             int res1 = target - nums[i];
             if (map.containsKey(res1)) {
                 res[0] = (int) map.get(res1);
                 res[1] = i;
                 return res;
-            }else {
+            } else {
                 map.put(nums[i], i);
             }
         }

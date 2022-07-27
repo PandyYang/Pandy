@@ -1,6 +1,7 @@
 package com.pandy.algorithm.leetcode;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @Author Pandy
@@ -16,7 +17,12 @@ public class LetterCombination {
     // 结果集
     StringBuilder sb = new StringBuilder();
 
-    List<String> res= new ArrayList<>();
+    List<String> res = new ArrayList<>();
+
+    public static void main(String[] args) {
+        LetterCombination letterCombination = new LetterCombination();
+        System.out.println(letterCombination.combinations("23"));
+    }
 
     public List<String> combinations(String digits) {
         if (digits == null || digits.length() == 0) return res;
@@ -35,10 +41,5 @@ public class LetterCombination {
             backTrace(digits, index + 1);
             sb.deleteCharAt(sb.length() - 1);
         }
-    }
-
-    public static void main(String[] args) {
-        LetterCombination letterCombination = new LetterCombination();
-        System.out.println(letterCombination.combinations("23"));
     }
 }

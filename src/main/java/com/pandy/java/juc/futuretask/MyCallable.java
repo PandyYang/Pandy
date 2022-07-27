@@ -4,11 +4,12 @@ import java.util.concurrent.Callable;
 
 public class MyCallable implements Callable<String> {
 
-    private long waitTime;
+    private final long waitTime;
 
-    public MyCallable(int timeInMillis){
-        this.waitTime=timeInMillis;
+    public MyCallable(int timeInMillis) {
+        this.waitTime = timeInMillis;
     }
+
     @Override
     public String call() throws Exception {
         Thread.sleep(waitTime);

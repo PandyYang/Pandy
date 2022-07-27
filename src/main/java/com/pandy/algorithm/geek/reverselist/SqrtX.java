@@ -7,7 +7,7 @@ public class SqrtX {
     public static int binarySearch(int x) {
         int index = -1, l = 0, r = x;
         while (r >= l) {
-            int mid = l + (r - l)/2;
+            int mid = l + (r - l) / 2;
             if (mid * mid <= x) {
                 index = mid;
                 l = mid + 1;
@@ -27,7 +27,7 @@ public class SqrtX {
     }
 
     public static double sqrt(double i, int x) {
-        double res = (i + x/i) / 2;
+        double res = (i + x / i) / 2;
         if (res == i) {
             return i;
         } else {

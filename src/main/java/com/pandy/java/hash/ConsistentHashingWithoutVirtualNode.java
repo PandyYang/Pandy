@@ -5,11 +5,11 @@ import java.util.TreeMap;
 
 public class ConsistentHashingWithoutVirtualNode {
     //待添加入Hash环的服务器列表
-    private static String[] servers = {"192.168.0.1:8888", "192.168.0.2:8888",
-      "192.168.0.3:8888"};
+    private static final String[] servers = {"192.168.0.1:8888", "192.168.0.2:8888",
+            "192.168.0.3:8888"};
 
     //key表示服务器的hash值，value表示服务器
-    private static SortedMap<Integer, String> sortedMap = new TreeMap<Integer, String>();
+    private static final SortedMap<Integer, String> sortedMap = new TreeMap<Integer, String>();
 
     //程序初始化，将所有的服务器放入sortedMap中
     static {

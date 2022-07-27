@@ -15,7 +15,7 @@ public class MaxSub {
             } else {
                 sum += i1;
             }
-            res = Math.max(sum,  res);
+            res = Math.max(sum, res);
         }
         return res;
     }

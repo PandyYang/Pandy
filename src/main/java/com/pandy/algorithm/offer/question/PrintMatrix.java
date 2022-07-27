@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * 矩阵的遍历
  */
 public class PrintMatrix {
-    public ArrayList<Integer> printMatrix(int[][] matrix)  {
+    public ArrayList<Integer> printMatrix(int[][] matrix) {
         ArrayList<Integer> list = new ArrayList<>();
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
             return list;
@@ -29,7 +29,7 @@ public class PrintMatrix {
             if (up > down) break;
 
             // 最右边一行
-            for (int row = up; row <= down; row ++) {
+            for (int row = up; row <= down; row++) {
                 list.add(matrix[row][right]);
             }
 
@@ -48,7 +48,7 @@ public class PrintMatrix {
             if (up > down) break;
 
             // 最左边一行
-            for (int row =down; row >= up; row--) {
+            for (int row = down; row >= up; row--) {
                 list.add(matrix[row][left]);
             }
 

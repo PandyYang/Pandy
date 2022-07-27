@@ -3,21 +3,12 @@ package com.pandy.algorithm.LRUCache;
 import java.util.HashMap;
 import java.util.Map;
 
-class LRUCache{
-    class DLinkedNode {
-        int key;
-        int value;
-        DLinkedNode prev;
-        DLinkedNode next;
-        public DLinkedNode() {}
-        public DLinkedNode(int _key, int _value) {key = _key; value = _value;}
-    }
-
-    private Map<Integer, DLinkedNode> cache = new HashMap<Integer, DLinkedNode>();
+class LRUCache {
+    private final Map<Integer, DLinkedNode> cache = new HashMap<Integer, DLinkedNode>();
     private int size;
-    private int capacity;
-    private DLinkedNode head, tail;
-
+    private final int capacity;
+    private final DLinkedNode head;
+    private final DLinkedNode tail;
     public LRUCache(int capacity) {
         this.size = 0;
         this.capacity = capacity;
@@ -56,8 +47,7 @@ class LRUCache{
                 cache.remove(tail.key);
                 --size;
             }
-        }
-        else {
+        } else {
             // 如果 key 存在，先通过哈希表定位，再修改 value，并移到头部
             node.value = value;
             moveToHead(node);
@@ -85,5 +75,20 @@ class LRUCache{
         DLinkedNode res = tail.prev;
         removeNode(res);
         return res;
+    }
+
+    class DLinkedNode {
+        int key;
+        int value;
+        DLinkedNode prev;
+        DLinkedNode next;
+
+        public DLinkedNode() {
+        }
+
+        public DLinkedNode(int _key, int _value) {
+            key = _key;
+            value = _value;
+        }
     }
 }

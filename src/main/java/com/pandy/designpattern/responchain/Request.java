@@ -4,8 +4,8 @@ import java.math.BigDecimal;
 
 public class Request {
 
-    private String name;
-    private BigDecimal amount;
+    private final String name;
+    private final BigDecimal amount;
 
     public Request(String name, BigDecimal amount) {
         this.name = name;

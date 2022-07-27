@@ -13,13 +13,13 @@ public class ReverseSentence {
             stringBuilder.append(reverse(s2));
             stringBuilder.append(" ");
         }
-        stringBuilder.replace(stringBuilder.length() - 2, stringBuilder.length() -1, "");
+        stringBuilder.replace(stringBuilder.length() - 2, stringBuilder.length() - 1, "");
         return stringBuilder.toString();
     }
 
     public static String reverse(String str) {
         StringBuilder stringBuilder = new StringBuilder();
-        for (int i = str.length()-1; i >= 0; i--) {
+        for (int i = str.length() - 1; i >= 0; i--) {
             stringBuilder.append(str.charAt(i));
         }
         return stringBuilder.toString();

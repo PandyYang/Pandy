@@ -13,6 +13,7 @@ public class MirrorTreeNode {
      * 1.先处理根节点。若根节点为空，或为单个节点，则直接返回。否则交换左右节点
      * 2.处理根节点的左子树
      * 3.处理根节点的右子树
+     *
      * @param root
      * @return
      */

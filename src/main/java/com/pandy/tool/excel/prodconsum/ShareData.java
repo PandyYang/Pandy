@@ -8,16 +8,16 @@ class ShareData {
 
     private int number = 0;
 
-    private Lock lock = new ReentrantLock();
+    private final Lock lock = new ReentrantLock();
 
-    private Condition condition = lock.newCondition();
+    private final Condition condition = lock.newCondition();
 
-    public void increment() throws Exception{
+    public void increment() throws Exception {
         // 同步代码块，加锁
         lock.lock();
         try {
             // 判断
-            while(number != 0) {
+            while (number != 0) {
                 // 等待不能生产
                 condition.await();
             }
@@ -36,12 +36,12 @@ class ShareData {
         }
     }
 
-    public void decrement() throws Exception{
+    public void decrement() throws Exception {
         // 同步代码块，加锁
         lock.lock();
         try {
             // 判断
-            while(number == 0) {
+            while (number == 0) {
                 // 等待不能消费
                 condition.await();
             }

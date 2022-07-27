@@ -1,7 +1,6 @@
 package com.pandy.elasticsearch.service.impl;
 
 import com.pandy.elasticsearch.model.User;
-import lombok.val;
 import org.apache.lucene.search.TotalHits;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
@@ -9,7 +8,9 @@ import org.elasticsearch.action.support.IndicesOptions;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.common.unit.Fuzziness;
 import org.elasticsearch.common.unit.TimeValue;
-import org.elasticsearch.index.query.*;
+import org.elasticsearch.index.query.BoolQueryBuilder;
+import org.elasticsearch.index.query.MatchQueryBuilder;
+import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.SearchHits;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
@@ -47,8 +48,8 @@ public class SearchServiceImpl {
         searchSourceBuilder.sort(new ScoreSortBuilder().order(SortOrder.DESC));
         searchSourceBuilder.sort(new FieldSortBuilder("id").order(SortOrder.ASC));
         searchSourceBuilder.fetchSource(false);
-        String[] includeFields = new String[] {"name", "id"};
-        String[] excludeFields = new String[] {"age"};
+        String[] includeFields = new String[]{"name", "id"};
+        String[] excludeFields = new String[]{"age"};
         searchSourceBuilder.fetchSource(includeFields, excludeFields);
         HighlightBuilder highlightBuilder = new HighlightBuilder();
         HighlightBuilder.Field highLightName = new HighlightBuilder.Field("name");

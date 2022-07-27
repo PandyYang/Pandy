@@ -1,7 +1,6 @@
 package com.pandy.algorithm.offer.question;
 
 
-
 import com.pandy.algorithm.offer.common.TreeNode;
 
 import java.util.ArrayList;
@@ -47,8 +46,8 @@ public class RebuildTree {
         return list;
     }
 
-    public TreeNode reConstructBinaryTree(int []pre, int[]in) {
-        TreeNode root = reConstructBinaryTree(pre, 0, pre.length - 1, in, 0, in.length-1);
+    public TreeNode reConstructBinaryTree(int[] pre, int[] in) {
+        TreeNode root = reConstructBinaryTree(pre, 0, pre.length - 1, in, 0, in.length - 1);
         return root;
     }
 
@@ -63,8 +62,8 @@ public class RebuildTree {
         for (int i = startIn; i < endIn; i++) {
             if (in[i] == pre[startPre]) {
 
-                root.left = reConstructBinaryTree(pre, startPre+1, startPre + i - startIn, in, startIn, i-1);
-                root.right = reConstructBinaryTree(pre, i-startIn+startPre+1, endPre, in, i + 1, endIn);
+                root.left = reConstructBinaryTree(pre, startPre + 1, startPre + i - startIn, in, startIn, i - 1);
+                root.right = reConstructBinaryTree(pre, i - startIn + startPre + 1, endPre, in, i + 1, endIn);
                 break;
             }
         }
@@ -79,25 +78,25 @@ public class RebuildTree {
         for (int i = 0; i < in.length; i++) {
             if (in[i] == pre[0]) {
                 // 左子树为
-                root.left = reConstructBinaryTree2(Arrays.copyOfRange(pre, 1, i+1), Arrays.copyOfRange(in, 0, i));
-                root.right = reConstructBinaryTree2(Arrays.copyOfRange(pre, i+1, pre.length), Arrays.copyOfRange(in, i+1, in.length));
+                root.left = reConstructBinaryTree2(Arrays.copyOfRange(pre, 1, i + 1), Arrays.copyOfRange(in, 0, i));
+                root.right = reConstructBinaryTree2(Arrays.copyOfRange(pre, i + 1, pre.length), Arrays.copyOfRange(in, i + 1, in.length));
                 break;
             }
         }
         return root;
     }
 
-    public TreeNode reConstructBinaryTree3(int [] pre,int [] in) {
-        if(pre.length == 0 || in.length == 0) {
+    public TreeNode reConstructBinaryTree3(int[] pre, int[] in) {
+        if (pre.length == 0 || in.length == 0) {
             return null;
         }
         // 找到根节点
         TreeNode root = new TreeNode(pre[0]);
-        for(int i = 0; i <in.length; i++) {
-            if(in[i] == pre[0]) {
+        for (int i = 0; i < in.length; i++) {
+            if (in[i] == pre[0]) {
                 // Arrays.copyOf()是左闭右开
-                root.left = reConstructBinaryTree3(Arrays.copyOfRange(pre, 1, i+1), Arrays.copyOfRange(in, 0, i));
-                root.right = reConstructBinaryTree3(Arrays.copyOfRange(pre, i+1, pre.length), Arrays.copyOfRange(in, i+1, in.length));
+                root.left = reConstructBinaryTree3(Arrays.copyOfRange(pre, 1, i + 1), Arrays.copyOfRange(in, 0, i));
+                root.right = reConstructBinaryTree3(Arrays.copyOfRange(pre, i + 1, pre.length), Arrays.copyOfRange(in, i + 1, in.length));
                 break;
             }
         }

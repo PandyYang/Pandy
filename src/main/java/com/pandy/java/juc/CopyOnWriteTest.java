@@ -9,11 +9,21 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * @Date 2021/8/8 22:34
  */
 public class CopyOnWriteTest {
-    private static List<String> list = new CopyOnWriteArrayList<>();
+    private static final List<String> list = new CopyOnWriteArrayList<>();
 
     public static void main(String[] args) {
         new MyThread("ta").start();
         new MyThread("tb").start();
+    }
+
+    private static void printAll() {
+        String value = null;
+        Iterator iterator = list.iterator();
+        while (iterator.hasNext()) {
+            value = (String) iterator.next();
+            System.out.print(value + " ");
+        }
+        System.out.println();
     }
 
     private static class MyThread extends Thread {
@@ -30,15 +40,5 @@ public class CopyOnWriteTest {
                 printAll();
             }
         }
-    }
-
-    private static void printAll() {
-        String value = null;
-        Iterator iterator = list.iterator();
-        while (iterator.hasNext()) {
-            value = (String) iterator.next();
-            System.out.print(value + " ");
-        }
-        System.out.println();
     }
 }

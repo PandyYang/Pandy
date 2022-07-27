@@ -11,10 +11,18 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 
 public class DiscardServer {
 
-    private int port;
+    private final int port;
 
     public DiscardServer(int port) {
         this.port = port;
+    }
+
+    public static void main(String[] args) {
+        int port = 8090;
+        if (args.length > 0) {
+            port = Integer.parseInt(args[0]);
+        }
+        new DiscardServer(port).run();
     }
 
     public void run() {
@@ -44,17 +52,9 @@ public class DiscardServer {
             f.channel().closeFuture().sync();
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             workerGroup.shutdownGracefully();
             bossGroup.shutdownGracefully();
         }
-    }
-
-    public static void main(String[] args) {
-        int port = 8090;
-        if (args.length > 0) {
-            port = Integer.parseInt(args[0]);
-        }
-        new DiscardServer(port).run();
     }
 }

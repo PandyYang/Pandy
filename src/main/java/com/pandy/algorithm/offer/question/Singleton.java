@@ -1,6 +1,13 @@
 package com.pandy.algorithm.offer.question;
 
-import java.awt.*;
+//枚举类
+enum EnumClass {
+    INSTANCE;
+
+    public void getInstance() {
+
+    }
+}
 
 /**
  * 设计一个类 我们只能生成该类的一个实例
@@ -9,6 +16,7 @@ import java.awt.*;
 // 饿汉式 线程安全
 class A {
     private static final A instance = new A();
+
     private A() {
 
     }
@@ -19,7 +27,7 @@ class A {
 }
 
 // 懒汉式 线程安全写法
-class B{
+class B {
     private static volatile B instance = null;
 
     private B() {
@@ -48,16 +56,18 @@ class C {
         return CHolder.INSTANCE;
     }
 
-    private static class CHolder{
+    private static class CHolder {
         private static final C INSTANCE = new C();
     }
 }
 
 // 饿汉式 调用效率高不能延时加载
 class ImageLoader {
-    private static ImageLoader instance = new ImageLoader();
+    private static final ImageLoader instance = new ImageLoader();
+
     // 私有构造器
-    private ImageLoader(){}
+    private ImageLoader() {
+    }
 
     public static ImageLoader getInstance() {
         return instance;
@@ -65,11 +75,12 @@ class ImageLoader {
 }
 
 // 懒汉式
-class Hungary{
+class Hungary {
     // 类初始化时 不初始化这个对象 真正用的时候再创建
     private static Hungary instance;
 
-    private Hungary(){ }
+    private Hungary() {
+    }
 
     public static synchronized Hungary getInstance() {
         if (instance == null) {
@@ -82,7 +93,10 @@ class Hungary{
 //双重校验锁模式 由于jvm底层模型的原因 不建议使用
 class DoubleCheck {
     private volatile static DoubleCheck instance;
-    private DoubleCheck(){ }
+
+    private DoubleCheck() {
+    }
+
     private static DoubleCheck getInstance() {
         if (instance == null) {
             synchronized (DoubleCheck.class) {
@@ -96,23 +110,15 @@ class DoubleCheck {
 }
 
 //静态内部类
-class StaticInnerClass{
-    private static class InnerClass{
-        private static final StaticInnerClass instance = new StaticInnerClass();
+class StaticInnerClass {
+    private StaticInnerClass() {
     }
-
-    private StaticInnerClass() {}
 
     public static StaticInnerClass getInstance() {
         return InnerClass.instance;
     }
-}
 
-//枚举类
-enum EnumClass {
-    INSTANCE;
-
-    public void getInstance() {
-
+    private static class InnerClass {
+        private static final StaticInnerClass instance = new StaticInnerClass();
     }
 }

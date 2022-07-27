@@ -7,6 +7,7 @@ package com.pandy.algorithm.jianzhi.question;
 // 饿汉式 线程安全
 class A {
     private static final A instance = new A();
+
     private A() {
 
     }
@@ -17,7 +18,7 @@ class A {
 }
 
 // 懒汉式 线程安全写法
-class B{
+class B {
     private static volatile B instance = null;
 
     private B() {
@@ -46,7 +47,7 @@ class C {
         return CHolder.INSTANCE;
     }
 
-    private static class CHolder{
+    private static class CHolder {
         private static final C INSTANCE = new C();
     }
 }

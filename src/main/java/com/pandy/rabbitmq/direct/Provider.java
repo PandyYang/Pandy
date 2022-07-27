@@ -21,7 +21,7 @@ public class Provider {
         channel.basicPublish("log_direct",
                 routingkey,
                 null,
-                ("这是direct模型发布的基于route key： [" + routingkey+ "]的消息").getBytes(StandardCharsets.UTF_8));
+                ("这是direct模型发布的基于route key： [" + routingkey + "]的消息").getBytes(StandardCharsets.UTF_8));
 
         RabbitMQUtil.close(channel, connection);
     }

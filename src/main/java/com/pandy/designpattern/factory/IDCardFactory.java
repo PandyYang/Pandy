@@ -6,8 +6,9 @@ import java.util.Vector;
  * @author Pandy
  * @date 2021/3/5 16:51
  */
-public class IDCardFactory extends Factory{
-    private Vector owners = new Vector();
+public class IDCardFactory extends Factory {
+    private final Vector owners = new Vector();
+
     @Override
     protected Product createProduct(String owner) {
         return new IDCard(owner);
@@ -22,7 +23,7 @@ public class IDCardFactory extends Factory{
 
     @Override
     protected void registerProduct(Product product) {
-        owners.add(((IDCard)product));
+        owners.add(product);
     }
 
     public Vector getOwners() {

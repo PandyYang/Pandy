@@ -6,7 +6,7 @@ import java.util.concurrent.CountDownLatch;
  * @author Pandy
  * @date 6/1/2022
  */
-public class ZkDistributedLock extends ZkAbstractTemplateLock{
+public class ZkDistributedLock extends ZkAbstractTemplateLock {
     @Override
     public boolean tryLock() {
         return false;

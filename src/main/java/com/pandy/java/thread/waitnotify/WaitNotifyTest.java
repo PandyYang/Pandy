@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * @author: Pandy
  * @create: 2022/6/17
- *
+ * <p>
  * 实现一个容器，提供两个方法。add size 写两个线程
  * 线程1添加10个元素到容器中，线程2实现监控元素的个数
  * 当个数到5个的时候 线程2给出提示并结束
@@ -16,18 +16,9 @@ public class WaitNotifyTest {
     /**
      * 使用wait notify进行互相通讯
      * wait会释放锁 notify不会释放锁
-     *
      */
 
     volatile List<Integer> list = new ArrayList<>();
-
-    public void add(int i) {
-        list.add(i);
-    }
-
-    public int getSize() {
-        return list.size();
-    }
 
     public static void main(String[] args) {
         WaitNotifyTest waitNotifyTest = new WaitNotifyTest();
@@ -68,6 +59,14 @@ public class WaitNotifyTest {
             }
         }).start();
 
+    }
+
+    public void add(int i) {
+        list.add(i);
+    }
+
+    public int getSize() {
+        return list.size();
     }
 
 }

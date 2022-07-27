@@ -14,7 +14,13 @@ public class ThreadPrint extends Thread {
     private static final int MAX_PRINT_NUM = 100;
 
     private static final AtomicInteger atomicInteger = new AtomicInteger(0);
+    private static volatile int count = 0;
 
+    public static void main(String[] args) {
+        ThreadPrint threadPrint = new ThreadPrint();
+//        threadPrint.printAB();
+        threadPrint.printCD();
+    }
 
     /**
      * 方法1： 使用AtomicInteger实现
@@ -23,7 +29,7 @@ public class ThreadPrint extends Thread {
         new Thread(() -> {
             while (atomicInteger.get() < MAX_PRINT_NUM) {
                 if (atomicInteger.get() % 2 == 0) {
-                    System.out.println("num: " +  atomicInteger.get());
+                    System.out.println("num: " + atomicInteger.get());
                     atomicInteger.incrementAndGet();
                 }
             }
@@ -38,9 +44,6 @@ public class ThreadPrint extends Thread {
             }
         }).start();
     }
-
-
-    private static volatile int count = 0;
 
     /**
      * 方法2： 使用volatile关键字实现
@@ -64,11 +67,5 @@ public class ThreadPrint extends Thread {
                 }
             }
         }).start();
-    }
-
-    public static void main(String[] args) {
-        ThreadPrint threadPrint = new ThreadPrint();
-//        threadPrint.printAB();
-        threadPrint.printCD();
     }
 }

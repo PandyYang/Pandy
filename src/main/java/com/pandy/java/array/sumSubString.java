@@ -13,7 +13,7 @@ public class sumSubString {
         System.out.println("Math.sqrt(-1) = " + Math.sqrt(-1));
     }
 
-    private int sumSubString(String a, String b){
+    private int sumSubString(String a, String b) {
         int sub = 0;
         while (a.contains(b)) {
             sub++;

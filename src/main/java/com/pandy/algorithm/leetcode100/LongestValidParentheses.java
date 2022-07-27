@@ -6,7 +6,7 @@ import java.util.Deque;
 /**
  * @Author Pandy
  * @Date 2021/7/19 0:01
- *
+ * <p>
  * 最长的有效括号
  */
 public class LongestValidParentheses {
@@ -21,7 +21,7 @@ public class LongestValidParentheses {
                 stack.pop();
                 if (stack.isEmpty()) stack.push(i);
                 else {
-                    res = Math.max(res, i-stack.peek());
+                    res = Math.max(res, i - stack.peek());
                 }
             }
         }

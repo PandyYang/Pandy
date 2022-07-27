@@ -10,7 +10,13 @@ import java.util.List;
  */
 public class GenerateParentesis {
 
-    private List<String> res= new ArrayList<>();
+    private final List<String> res = new ArrayList<>();
+
+    public static void main(String[] args) {
+        GenerateParentesis generateParentesis = new GenerateParentesis();
+        System.out.println(generateParentesis.generate(2));
+    }
+
     public List<String> generate(int n) {
         dfs("", n, 0, 0);
         return res;
@@ -23,10 +29,5 @@ public class GenerateParentesis {
         if (open == n && open == close) res.add(ans);
         dfs(ans + '(', n, open + 1, close);
         dfs(ans + ')', n, open, close + 1);
-    }
-
-    public static void main(String[] args) {
-        GenerateParentesis generateParentesis = new GenerateParentesis();
-        System.out.println(generateParentesis.generate(2));
     }
 }

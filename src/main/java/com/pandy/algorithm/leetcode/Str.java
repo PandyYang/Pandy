@@ -9,7 +9,9 @@ public class Str {
         for (int i = 0; i <= a.toCharArray().length; i++) {
             for (int i1 = 0; i1 <= b.toCharArray().length; i1++) {
                 if (a.charAt(i) == b.charAt(i1)) {
-                    i++;i1++; continue;
+                    i++;
+                    i1++;
+                    continue;
                 } else {
                     if (i1 == b.length()) {
                         return i1 - i;
@@ -28,7 +30,7 @@ public class Str {
         for (int i = 0; i < a.length(); i++) {
             if (a.charAt(i) == b.charAt(j)) {
                 if (j == window - 1) {
-                    return i-window+1;
+                    return i - window + 1;
                 }
                 j++;
             } else {

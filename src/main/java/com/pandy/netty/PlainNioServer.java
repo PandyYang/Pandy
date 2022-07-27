@@ -24,10 +24,10 @@ public class PlainNioServer {
         Selector selector = Selector.open();
         serverChannel.register(selector, SelectionKey.OP_ACCEPT);
         ByteBuffer wrap = ByteBuffer.wrap("hi".getBytes());
-        for (;;) {
+        for (; ; ) {
             try {
                 selector.select();
-            }catch (IOException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
                 break;
             }
@@ -48,14 +48,14 @@ public class PlainNioServer {
                         SocketChannel client = (SocketChannel) next.channel();
                         ByteBuffer byteBuffer = (ByteBuffer) next.attachment();
                         while (byteBuffer.hasRemaining()) {
-                            if (client.write(byteBuffer) == 0)  break;
+                            if (client.write(byteBuffer) == 0) break;
                         }
                     }
-                }catch (IOException e) {
+                } catch (IOException e) {
                     next.channel();
                     try {
                         next.channel().close();
-                    }catch (IOException ee) {
+                    } catch (IOException ee) {
                         //
                     }
                 }

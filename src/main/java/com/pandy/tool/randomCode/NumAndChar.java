@@ -29,7 +29,7 @@ public class NumAndChar {
         //指定随机字符串的长度
         int length = 6;
 
-        for(int i = 0; i < length; i++) {
+        for (int i = 0; i < length; i++) {
 
             //生成随机索引号
             int index = random.nextInt(alphaNumeric.length());

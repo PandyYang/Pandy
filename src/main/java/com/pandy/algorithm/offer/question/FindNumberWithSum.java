@@ -20,9 +20,9 @@ public class FindNumberWithSum {
                 return list;
             } else {
                 if (s > sum) {
-                    right --;
+                    right--;
                 } else {
-                    left ++;
+                    left++;
                 }
             }
         }

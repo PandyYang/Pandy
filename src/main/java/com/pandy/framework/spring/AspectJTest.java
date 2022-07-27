@@ -10,7 +10,8 @@ public class AspectJTest {
      * 定义的切点
      */
     @Pointcut("execution(* *.test(..))")
-    public void test(){}
+    public void test() {
+    }
 
     /**
      * 前置通知

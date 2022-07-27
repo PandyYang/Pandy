@@ -19,9 +19,9 @@ public class Consumer02 {
      * 设置队列及交换机名称
      */
     private static final String ROUTING_KEY = "info";
-//    private static final String ROUTING_KEY = "error";
+    //    private static final String ROUTING_KEY = "error";
     private static final String QUEUE_NAME = "consumer_info";
-//    private static final String QUEUE_NAME = "consumer_error";
+    //    private static final String QUEUE_NAME = "consumer_error";
     private static final String EXCHANGE_NAME = "direct_exchange";
 
     public static void main(String[] args) throws Exception {

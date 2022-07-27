@@ -8,9 +8,9 @@ import java.util.concurrent.locks.ReentrantLock;
  * @date 6/1/2022
  */
 public class OrderService {
-    private OrderNumberCreateUtil orderNumberCreateUtil = new OrderNumberCreateUtil();
+    private final OrderNumberCreateUtil orderNumberCreateUtil = new OrderNumberCreateUtil();
 
-    private Lock lock = new ReentrantLock();
+    private final Lock lock = new ReentrantLock();
 
     public String getOrderNumber() {
         lock.lock();

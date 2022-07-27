@@ -5,45 +5,15 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class ConstructBinaryTree {
-    private int[] array = {1,2,3,4,5,6,7,8,9};
-    private static List<Node> nodeList  = null;
+    private static List<Node> nodeList = null;
+    private final int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-    private static class Node {
-        Node leftChild;
-        Node rightChild;
-        int data;
-        Node(int newData) {
-            leftChild = null;
-            rightChild = null;
-            data = newData;
-        }
-    }
-
-    public void createBinTree() {
-        nodeList = new LinkedList<Node>();
-        for (int i = 0; i < array.length; i++) {
-            nodeList.add(new Node(array[i]));
-        }
-
-        for (int i = 0; i < array.length / 2 - 1; i++) {
-            nodeList.get(i).leftChild = nodeList.get(i*2+1);
-            nodeList.get(i).rightChild = nodeList.get(i*2+2);
-        }
-
-        int lastParentIndex = array.length/2-1;
-
-        nodeList.get(lastParentIndex).leftChild = nodeList.get(lastParentIndex * 2 + 1);
-        if (array.length % 2 == 1) {
-            nodeList.get(lastParentIndex).rightChild = nodeList.get(lastParentIndex * 2+2);
-        }
-    }
     /**
      * 先序遍历
-     *
+     * <p>
      * 这三种不同的遍历结构都是一样的，只是先后顺序不一样而已
      *
-     * @param node
-     *            遍历的节点
+     * @param node 遍历的节点
      */
     public static void preOrderTraverse(Node node) {
         if (node == null)
@@ -55,11 +25,10 @@ public class ConstructBinaryTree {
 
     /**
      * 中序遍历
-     *
+     * <p>
      * 这三种不同的遍历结构都是一样的，只是先后顺序不一样而已
      *
-     * @param node
-     *            遍历的节点
+     * @param node 遍历的节点
      */
     public static void inOrderTraverse(Node node) {
         if (node == null)
@@ -71,11 +40,10 @@ public class ConstructBinaryTree {
 
     /**
      * 后序遍历
-     *
+     * <p>
      * 这三种不同的遍历结构都是一样的，只是先后顺序不一样而已
      *
-     * @param node
-     *            遍历的节点
+     * @param node 遍历的节点
      */
     public static void postOrderTraverse(Node node) {
         if (node == null)
@@ -101,6 +69,37 @@ public class ConstructBinaryTree {
 
         System.out.println("后序遍历：");
         postOrderTraverse(root);
+    }
+
+    public void createBinTree() {
+        nodeList = new LinkedList<Node>();
+        for (int i = 0; i < array.length; i++) {
+            nodeList.add(new Node(array[i]));
+        }
+
+        for (int i = 0; i < array.length / 2 - 1; i++) {
+            nodeList.get(i).leftChild = nodeList.get(i * 2 + 1);
+            nodeList.get(i).rightChild = nodeList.get(i * 2 + 2);
+        }
+
+        int lastParentIndex = array.length / 2 - 1;
+
+        nodeList.get(lastParentIndex).leftChild = nodeList.get(lastParentIndex * 2 + 1);
+        if (array.length % 2 == 1) {
+            nodeList.get(lastParentIndex).rightChild = nodeList.get(lastParentIndex * 2 + 2);
+        }
+    }
+
+    private static class Node {
+        Node leftChild;
+        Node rightChild;
+        int data;
+
+        Node(int newData) {
+            leftChild = null;
+            rightChild = null;
+            data = newData;
+        }
     }
 
 }

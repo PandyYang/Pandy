@@ -17,26 +17,26 @@ public class FutureTaskExample {
 
         while (true) {
             try {
-                if(futureTask1.isDone() && futureTask2.isDone()){
+                if (futureTask1.isDone() && futureTask2.isDone()) {
                     System.out.println("Done");
                     //shut down executor service
                     executor.shutdown();
                     return;
                 }
 
-                if(!futureTask1.isDone()){
-                //wait indefinitely for future task to complete
-                System.out.println("FutureTask1 output="+futureTask1.get());
+                if (!futureTask1.isDone()) {
+                    //wait indefinitely for future task to complete
+                    System.out.println("FutureTask1 output=" + futureTask1.get());
                 }
 
                 System.out.println("Waiting for FutureTask2 to complete");
                 String s = futureTask2.get(200L, TimeUnit.MILLISECONDS);
-                if(s !=null){
-                    System.out.println("FutureTask2 output="+s);
+                if (s != null) {
+                    System.out.println("FutureTask2 output=" + s);
                 }
             } catch (InterruptedException | ExecutionException e) {
                 e.printStackTrace();
-            }catch(TimeoutException e){
+            } catch (TimeoutException e) {
                 //do nothing
             }
         }

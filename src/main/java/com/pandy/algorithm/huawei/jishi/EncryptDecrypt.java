@@ -26,20 +26,20 @@ public class EncryptDecrypt {
         StringBuilder stringBuilder = new StringBuilder();
         for (char c : res.toCharArray()) {
             // 为字母
-            if(Character.isLetter(c)) {
+            if (Character.isLetter(c)) {
                 // 如果字母为大写
                 if (c >= 65 && c <= 90) {
                     if (c == 'Z') {
                         stringBuilder.append("a");
                     } else {
-                        stringBuilder.append((String.valueOf((char)(c + 1)).toLowerCase()));
+                        stringBuilder.append((String.valueOf((char) (c + 1)).toLowerCase()));
                     }
-                // 如果字母为小写
-                } else if (c >= 97 && c <= 122){
+                    // 如果字母为小写
+                } else if (c >= 97 && c <= 122) {
                     if (c == 'z') {
                         stringBuilder.append("A");
                     } else {
-                        stringBuilder.append((String.valueOf((char)(c + 1)).toUpperCase()));
+                        stringBuilder.append((String.valueOf((char) (c + 1)).toUpperCase()));
                     }
                 }
 
@@ -64,14 +64,14 @@ public class EncryptDecrypt {
                 if (c == 'a') {
                     stringBuilder.append("Z");
                 } else {
-                    stringBuilder.append((String.valueOf((char)(c - 1)).toUpperCase()));
+                    stringBuilder.append((String.valueOf((char) (c - 1)).toUpperCase()));
                 }
                 // 如果字母为大写
-            } else if (c >= 65 && c <= 90){
+            } else if (c >= 65 && c <= 90) {
                 if (c == 'A') {
                     stringBuilder.append("z");
                 } else {
-                    stringBuilder.append((String.valueOf((char)(c - 1)).toLowerCase()));
+                    stringBuilder.append((String.valueOf((char) (c - 1)).toLowerCase()));
                 }
             }
             if (Character.isDigit(c)) {

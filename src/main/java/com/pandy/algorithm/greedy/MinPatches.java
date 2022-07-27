@@ -14,7 +14,7 @@ public class MinPatches {
                 total += nums[index++];
             } else {
                 total = total + total + 1;
-                count ++;
+                count++;
             }
         }
         return count;

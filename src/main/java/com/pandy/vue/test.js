@@ -1,5 +1,3 @@
-
-
 function handleCopyWithAuth() {
     var text = 123
 

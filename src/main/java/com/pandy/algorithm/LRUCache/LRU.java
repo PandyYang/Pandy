@@ -7,23 +7,11 @@ import java.util.function.Consumer;
 
 public class LRU<K, V> implements Iterable<K> {
 
-    private Node head;
-    private Node tail;
-    private HashMap<K, Node> map;
-    private int maxSize;
+    private final Node head;
+    private final Node tail;
+    private final HashMap<K, Node> map;
+    private final int maxSize;
 
-
-    private class Node {
-        Node pre;
-        Node next;
-        K k;
-        V v;
-
-        public Node(K k, V v) {
-            this.k = k;
-            this.v = v;
-        }
-    }
 
     public LRU(int maxSize) {
         this.maxSize = maxSize;
@@ -38,7 +26,7 @@ public class LRU<K, V> implements Iterable<K> {
     }
 
     public V get(K key) {
-        if (!map.containsKey(key)){
+        if (!map.containsKey(key)) {
             return null;
         }
 
@@ -76,5 +64,17 @@ public class LRU<K, V> implements Iterable<K> {
     @Override
     public Spliterator<K> spliterator() {
         return Iterable.super.spliterator();
+    }
+
+    private class Node {
+        Node pre;
+        Node next;
+        K k;
+        V v;
+
+        public Node(K k, V v) {
+            this.k = k;
+            this.v = v;
+        }
     }
 }

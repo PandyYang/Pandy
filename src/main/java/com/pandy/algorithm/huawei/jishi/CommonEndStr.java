@@ -8,10 +8,10 @@ public class CommonEndStr {
         while (sc.hasNextInt()) {
             int n = sc.nextInt();
             int cnt = 0;
-            for(int i=0; i<=n; i++) {
-                long end = i*i;
-                if(String.valueOf(end).endsWith(String.valueOf(i))) {
-                    cnt ++;
+            for (int i = 0; i <= n; i++) {
+                long end = i * i;
+                if (String.valueOf(end).endsWith(String.valueOf(i))) {
+                    cnt++;
                 }
             }
             System.out.println(cnt);

@@ -7,13 +7,14 @@ import java.lang.reflect.Proxy;
 /**
  * @author: Pandy
  * @create: 2022/3/19
- *
+ * <p>
  * 用于生成JDK动态代理
  **/
 public class LogProxy {
 
     /**
-     *  生成动态代理对象的方法
+     * 生成动态代理对象的方法
+     *
      * @param target 传入的目标对象
      * @return 生成的JDK动态代理对象
      */

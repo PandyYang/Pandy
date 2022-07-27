@@ -6,14 +6,14 @@ import java.util.Iterator;
 import java.util.List;
 
 public class LRU {
-    public int[] LRU (int[][] operators, int k) {
+    public int[] LRU(int[][] operators, int k) {
         // write code here
         HashMap<Integer, Integer> map = new HashMap();
         List<Integer> list = new ArrayList<>();
         for (int[] operator : operators) {
             // 判断是1还是2
             int key = operator[1];
-            switch (operator[0]){
+            switch (operator[0]) {
                 // 为1插入
                 case 1:
                     int value = operator[2];

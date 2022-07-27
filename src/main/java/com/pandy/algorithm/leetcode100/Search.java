@@ -3,19 +3,20 @@ package com.pandy.algorithm.leetcode100;
 /**
  * @Author Pandy
  * @Date 2021/7/22 22:13
- *
+ * <p>
  * [1,2,3,4,5,6,7]
  * k = 3
  * [4,5,6,7,1,2,3]
- *
+ * <p>
  * 旋转数字的特性: 如果中间的数字 小于最右边的数字 那么右半部分是有序的
  * 如果中间的数字 大于最右边的数字 那么左半部分是有序的
  * 在有序的半段中用首尾两个数组判断目标值是否在这一区域中
  */
 public class Search {
     public static void main(String[] args) {
-        System.out.println(search(new int[]{3,5,1}, 3));
+        System.out.println(search(new int[]{3, 5, 1}, 3));
     }
+
     public static int search(int[] nums, int target) {
         int len = nums.length;
         int left = 0, right = len - 1;

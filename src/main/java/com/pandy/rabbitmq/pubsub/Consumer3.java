@@ -1,7 +1,10 @@
 package com.pandy.rabbitmq.pubsub;
 
 import com.pandy.rabbitmq.utils.RabbitMQUtil;
-import com.rabbitmq.client.*;
+import com.rabbitmq.client.CancelCallback;
+import com.rabbitmq.client.Channel;
+import com.rabbitmq.client.Connection;
+import com.rabbitmq.client.DeliverCallback;
 
 import java.io.IOException;
 
@@ -42,15 +45,15 @@ public class Consumer3 {
 //            }
 //        });
 
-       CancelCallback cancelCallback = (consumerTag -> {
-           System.out.println("Consumer02消费消息中断");
-       });
+        CancelCallback cancelCallback = (consumerTag -> {
+            System.out.println("Consumer02消费消息中断");
+        });
 
-       DeliverCallback deliverCallback = ((consumerTag, message) -> {
-           String s = new String(message.getBody());
-           System.out.println("Consumer02消费消息成功");
-           System.out.println(s);
-       });
+        DeliverCallback deliverCallback = ((consumerTag, message) -> {
+            String s = new String(message.getBody());
+            System.out.println("Consumer02消费消息成功");
+            System.out.println(s);
+        });
 
         CancelCallback cancelCallback01 = (consumerTag -> {
             System.out.println("Consumer01消费消息中断");
@@ -62,8 +65,8 @@ public class Consumer3 {
             System.out.println(s);
         });
 
-       channel.basicConsume(Queue_NAME, true, deliverCallback01, cancelCallback01);
-       channel.basicConsume(Queue_NAME2, true, deliverCallback, cancelCallback);
+        channel.basicConsume(Queue_NAME, true, deliverCallback01, cancelCallback01);
+        channel.basicConsume(Queue_NAME2, true, deliverCallback, cancelCallback);
 
 //       RabbitMQUtil.close(channel, connection);
 

@@ -11,9 +11,9 @@ public class LastRemaininig {
         }
 
         while (list.size() > 1) {
-            bt = (bt+m-1) % list.size();
+            bt = (bt + m - 1) % list.size();
             list.remove(bt);
         }
-        return list.size() == 1?list.get(0) : -1;
+        return list.size() == 1 ? list.get(0) : -1;
     }
 }

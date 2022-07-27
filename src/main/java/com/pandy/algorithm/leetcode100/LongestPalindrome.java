@@ -30,12 +30,12 @@ public class LongestPalindrome {
                     if (j - i < 3) {
                         dp[i][j] = true;
                     } else {
-                        dp[i][j] = dp[i+1][j-1];
+                        dp[i][j] = dp[i + 1][j - 1];
                     }
                 }
                 // 只要dp[i][j] == true成立 就表示s[i..L]是回文 此时记录回文长度和起始位置
                 if (dp[i][j] && j - i + 1 > maxLen) {
-                    maxLen = j- i+1;
+                    maxLen = j - i + 1;
                     begin = i;
                 }
             }
@@ -49,7 +49,7 @@ public class LongestPalindrome {
         int max = 0;
         int len = s.length();
         for (int i = 0; i < len; i++) {
-            for (int j = i + 1;  j<= len; j++) {
+            for (int j = i + 1; j <= len; j++) {
                 String test = s.substring(i, j);
                 if (isPalindromic(test) && test.length() > max) {
                     ans = s.substring(i, j);
@@ -63,7 +63,7 @@ public class LongestPalindrome {
     // 判断是否为回文
     public static boolean isPalindromic(String s) {
         int len = s.length();
-        for (int i = 0; i< len / 2; i++) {
+        for (int i = 0; i < len / 2; i++) {
             if (s.charAt(i) != s.charAt(len - i - 1)) {
                 return false;
             }

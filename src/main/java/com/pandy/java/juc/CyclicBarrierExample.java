@@ -10,10 +10,10 @@ import java.util.concurrent.CyclicBarrier;
 public class CyclicBarrierExample {
 
     /**
-     *  创建了5个线程 所有这些线程都是调用cb.await等待 所有这些线程一直等待
-     *  直到cb中所所有线程都达到barrier时，这些线程才继续允许。
+     * 创建了5个线程 所有这些线程都是调用cb.await等待 所有这些线程一直等待
+     * 直到cb中所所有线程都达到barrier时，这些线程才继续允许。
      */
-    private static int SIZE = 5;
+    private static final int SIZE = 5;
     private static CyclicBarrier cb;
 
     public static void main(String[] args) {

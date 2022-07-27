@@ -12,10 +12,7 @@ public class IsBalanceTree {
         int left = getDepth(root.left);
         int right = getDepth(root.right);
         int diff = left - right;
-        if (diff <= 1 && diff >= -1) {
-            return true;
-        }
-        return false;
+        return diff <= 1 && diff >= -1;
     }
 
     public int getDepth(TreeNode root) {

@@ -9,11 +9,11 @@ public class ConvertToTitle {
             int n = in.nextInt();
             StringBuilder stringBuilder = new StringBuilder();
             while (n > 0) {
-                n --;
-                stringBuilder.append((char)(n % 26 + 'A'));
+                n--;
+                stringBuilder.append((char) (n % 26 + 'A'));
                 n = n % 26;
             }
-            System.out.println(stringBuilder.reverse().toString());
+            System.out.println(stringBuilder.reverse());
         }
     }
 }

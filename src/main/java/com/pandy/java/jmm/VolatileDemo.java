@@ -34,7 +34,8 @@ public class VolatileDemo {
             System.out.println(Thread.currentThread().getName() + "\t update number value");
         }, "AAA").start();
 
-        while (myData.number == 0) {}
+        while (myData.number == 0) {
+        }
 
         System.out.println(Thread.currentThread().getName() + "\t mission is over");
     }

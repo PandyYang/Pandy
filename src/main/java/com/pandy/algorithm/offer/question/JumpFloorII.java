@@ -7,7 +7,7 @@ public class JumpFloorII {
         } else if (target == 1) {
             return 1;
         } else {
-            return 2 * jump2(target -1 );
+            return 2 * jump2(target - 1);
         }
     }
 
@@ -19,7 +19,7 @@ public class JumpFloorII {
         } else if (target == 2) {
             return 2;
         } else {
-            return jump(target -1) + jump(target - 2);
+            return jump(target - 1) + jump(target - 2);
         }
     }
 }

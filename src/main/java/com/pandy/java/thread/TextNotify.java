@@ -2,12 +2,11 @@ package com.pandy.java.thread;
 
 public class TextNotify {
     public static void main(String[] args) throws InterruptedException {
-        String text="hello";
-        Thread t1=new Thread(new Runnable() {
+        String text = "hello";
+        Thread t1 = new Thread(new Runnable() {
             @Override
             public void run() {
-                synchronized (text)
-                {
+                synchronized (text) {
                     System.out.println("同步代码块开始");
                     try {
                         text.wait();//线程等待
@@ -18,11 +17,10 @@ public class TextNotify {
                 }
             }
         });
-        Thread t2=new Thread(new Runnable() {
+        Thread t2 = new Thread(new Runnable() {
             @Override
             public void run() {
-                synchronized (text)
-                {
+                synchronized (text) {
                     System.out.println("线程开始唤醒");
                     text.notify();
                     System.out.println("线程结束唤醒");

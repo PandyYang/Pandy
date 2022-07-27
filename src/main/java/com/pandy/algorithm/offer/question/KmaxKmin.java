@@ -25,7 +25,7 @@ public class KmaxKmin {
 
     // 求第k小的元素 使用大根堆
     public static int kmin(int[] arr, int k) {
-        PriorityQueue<Integer> max = new PriorityQueue<>((x, y) -> (y-x));
+        PriorityQueue<Integer> max = new PriorityQueue<>((x, y) -> (y - x));
         for (int i : arr) {
             if (max.size() < k) {
                 max.add(k);

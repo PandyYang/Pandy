@@ -6,11 +6,12 @@ import java.util.Vector;
  * @author Pandy
  * @date 2021/3/5 14:49
  */
-public class BookShelf implements Aggregate{
+public class BookShelf implements Aggregate {
 
-    private Vector<Book> books;
-//    private Book[] books;
-    private int last = 1;
+    private final Vector<Book> books;
+    //    private Book[] books;
+    private final int last = 1;
+
     public BookShelf(int maxSize) {
         this.books = new Vector(maxSize);
     }

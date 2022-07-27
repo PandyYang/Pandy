@@ -7,6 +7,6 @@ public class TreeDepth {
         if (root == null) return 0;
         int left = depth(root.left);
         int right = depth(root.right);
-        return left < right ? right+1 : left+1;
+        return left < right ? right + 1 : left + 1;
     }
 }

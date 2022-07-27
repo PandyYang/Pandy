@@ -14,15 +14,15 @@ public class LCS {
         for (int i = 0; i < str1.length(); i++) {
             for (int j = 0; j < str2.length(); j++) {
                 if (str1.charAt(i) == str2.charAt(j)) {
-                    dp[i+1][j+1] = dp[i][j] + 1;
-                    if (dp[i+1][j+1] > maxLength) {
-                        maxLength =dp[i+1][j+1];
+                    dp[i + 1][j + 1] = dp[i][j] + 1;
+                    if (dp[i + 1][j + 1] > maxLength) {
+                        maxLength = dp[i + 1][j + 1];
                         // 记录最后一个元素的位置
                         maxLastIndex = i;
                     }
                 } else {
                     // 两个字符不相等的情况
-                    dp[i+1][j+1] = 0;
+                    dp[i + 1][j + 1] = 0;
                 }
             }
         }

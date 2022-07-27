@@ -7,12 +7,12 @@ package com.pandy.algorithm.base.search;
 public class BinarySearch {
     public static int search(int[] nums, int target) {
         int left = 0;
-        int right = nums.length -1;
+        int right = nums.length - 1;
         int mid = 0;
         while (left <= right) {
-            mid = left + (right - left) /2;
+            mid = left + (right - left) / 2;
             if (target == nums[mid]) {
-                while (mid != 0 && (nums[mid-1] == nums[mid]))
+                while (mid != 0 && (nums[mid - 1] == nums[mid]))
                     mid--;
                 return mid;
             } else if (target > nums[mid]) {
@@ -24,23 +24,21 @@ public class BinarySearch {
         return -1;
     }
 
-    public static int search2 (int[] nums, int target) {
+    public static int search2(int[] nums, int target) {
         int low = 0;
-        int high = nums.length-1;
+        int high = nums.length - 1;
         int mid = 0;
-        while(low <= high){
-            mid = low+ (high- low) / 2;
-            if(nums[mid] == target){
+        while (low <= high) {
+            mid = low + (high - low) / 2;
+            if (nums[mid] == target) {
                 // 如果有相同的结果出现 只找出靠近最左边的
-                while(mid != 0 &&(nums[mid-1] == nums[mid])){
+                while (mid != 0 && (nums[mid - 1] == nums[mid])) {
                     mid--;
                 }
                 return mid;
-            }
-            else if(nums[mid] > target){
+            } else if (nums[mid] > target) {
                 high = mid - 1;
-            }
-            else {
+            } else {
                 low = mid + 1;
             }
         }

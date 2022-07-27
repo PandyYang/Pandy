@@ -3,13 +3,13 @@ package com.pandy.java.thread;
 /**
  * @author: Pandy
  * @create: 2022/6/20
- *
+ * <p>
  * 三个线程轮训打印1 - 100
  **/
 public class Print100 {
 
     // 共享锁
-    private static Object lock = new Object();
+    private static final Object lock = new Object();
 
     // 要打印的资源
     private static int n = 1;
@@ -31,7 +31,7 @@ public class Print100 {
                             }
                         }
                         if (n != 101) {
-                            System.out.println(Thread.currentThread().getName() + ": " + n ++);
+                            System.out.println(Thread.currentThread().getName() + ": " + n++);
                         } else {
                             break;
                         }
@@ -55,7 +55,7 @@ public class Print100 {
                             }
                         }
                         if (n != 101) {
-                            System.out.println(Thread.currentThread().getName() + ": " + n ++);
+                            System.out.println(Thread.currentThread().getName() + ": " + n++);
                         } else {
                             break;
                         }
@@ -79,7 +79,7 @@ public class Print100 {
                             }
                         }
                         if (n != 101) {
-                            System.out.println(Thread.currentThread().getName() + ": " + n ++);
+                            System.out.println(Thread.currentThread().getName() + ": " + n++);
                         } else {
                             break;
                         }

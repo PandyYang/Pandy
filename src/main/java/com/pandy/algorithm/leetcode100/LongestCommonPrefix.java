@@ -1,7 +1,5 @@
 package com.pandy.algorithm.leetcode100;
 
-import java.util.Arrays;
-
 /**
  * @author Pandy
  * 寻找公共前缀
@@ -14,7 +12,7 @@ public class LongestCommonPrefix {
         String ans = strs[0];
         for (int i = 1; i < strs.length; i++) {
             int j = 0;
-            for (; j< ans.length() && j <strs[i].length(); j++) {
+            for (; j < ans.length() && j < strs[i].length(); j++) {
                 if (ans.charAt(j) != strs[i].charAt(j)) break;
             }
             ans = ans.substring(0, j);

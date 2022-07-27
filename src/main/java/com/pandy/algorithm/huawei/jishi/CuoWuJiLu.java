@@ -1,6 +1,8 @@
 package com.pandy.algorithm.huawei.jishi;
 
-import java.util.*;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 public class CuoWuJiLu {
     public static void main(String[] args) {
@@ -13,7 +15,7 @@ public class CuoWuJiLu {
             String s1 = split[split.length - 1];
 
             // 记录最后的16个字符
-            if(s1.length() > 16) {
+            if (s1.length() > 16) {
                 s1 = s1.substring(s1.length() - 16);
             }
             String key = s1 + " " + lineNum;

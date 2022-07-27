@@ -15,7 +15,7 @@ public class FindContentChildren {
             if (g[gi] <= s[si]) {
                 gi++;
             }
-            si ++;
+            si++;
         }
         return gi;
     }

@@ -4,30 +4,36 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Scanner;
 
-class Student{
-    private int grade;
-    private String name;
+class Student {
     public static final Comparator<Student> INCREASE = new increase();
     public static final Comparator<Student> DECREASE = new decrease();
-    public Student(String name, int grade) {this.name = name;
+    private final int grade;
+    private final String name;
+
+    public Student(String name, int grade) {
+        this.name = name;
         this.grade = grade;
     }
+
     public String toString() {
         return name + " " + grade;
     }
+
     private static class increase implements Comparator<Student> {
         public int compare(Student v, Student w) {
             return w.grade - v.grade;
         }
     }
+
     private static class decrease implements Comparator<Student> {
         public int compare(Student v, Student w) {
             return v.grade - w.grade;
         }
     }
 }
+
 public class Main {
- 
+
     public Main() {
         Scanner in = new Scanner(System.in);
         while (in.hasNext()) {
@@ -39,8 +45,7 @@ public class Main {
             }
             if (flag == 1) {
                 Arrays.sort(students, Student.DECREASE);
-            }
-            else {
+            } else {
                 Arrays.sort(students, Student.INCREASE);
             }
             for (Student student : students) {
@@ -48,8 +53,8 @@ public class Main {
             }
         }
     }
- 
-    public static void main(String[] args)
-    {
+
+    public static void main(String[] args) {
         Main solution = new Main();
-    } }
+    }
+}

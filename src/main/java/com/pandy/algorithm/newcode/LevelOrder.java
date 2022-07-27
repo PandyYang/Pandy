@@ -11,6 +11,8 @@ import java.util.Queue;
  * 返回二叉树的层次遍历
  */
 public class LevelOrder {
+    ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
+
     public ArrayList<ArrayList<Integer>> levelOrder(TreeNode root) {
         ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
         if (root == null) return res;
@@ -39,8 +41,6 @@ public class LevelOrder {
         count(root, 0);
         return res;
     }
-
-    ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
 
     public void count(TreeNode node, int level) {
         if (level == res.size()) res.add(new ArrayList<Integer>());

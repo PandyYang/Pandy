@@ -3,27 +3,26 @@ package com.pandy.algorithm.bfs;
 
 /**
  * 不需要确定遍历到了哪一层
- *
+ * <p>
  * while queue 不空：
- *     cur = queue.pop()
- *     for 节点 in cur的所有相邻节点：
- *         if 该节点有效且未访问过：
- *             queue.push(该节点)
- *
+ * cur = queue.pop()
+ * for 节点 in cur的所有相邻节点：
+ * if 该节点有效且未访问过：
+ * queue.push(该节点)
+ * <p>
  * 需要确定遍历到了哪一层
- *
+ * <p>
  * level = 0
  * while queue 不空：
- *     size = queue.size()
- *     while (size --) {
- *         cur = queue.pop()
- *         for 节点 in cur的所有相邻节点：
- *             if 该节点有效且未被访问过：
- *                 queue.push(该节点)
- *     }
- *     level ++;
- *
-  */
+ * size = queue.size()
+ * while (size --) {
+ * cur = queue.pop()
+ * for 节点 in cur的所有相邻节点：
+ * if 该节点有效且未被访问过：
+ * queue.push(该节点)
+ * }
+ * level ++;
+ */
 
 import com.pandy.algorithm.huawei.TreeNode;
 

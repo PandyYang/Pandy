@@ -5,7 +5,8 @@ package com.pandy.designpattern.adapters;
  * @date 2021/3/5 15:52
  */
 public class Banner {
-    private String string;
+    private final String string;
+
     public Banner(String string) {
         this.string = string;
     }

@@ -29,15 +29,15 @@ public class BrotherWord {
             System.out.println(mubiaoList.size());
             // 字符排序
             mubiaoList.sort(new Comparator<String>() {
-               @Override
-               public int compare(String o1, String o2) {
-                   return o1.compareTo(o2);
-               }
-           });
+                @Override
+                public int compare(String o1, String o2) {
+                    return o1.compareTo(o2);
+                }
+            });
             // 确保存在数字k
-           if (mubiaoList.size() > weizhi) {
-               System.out.println(mubiaoList.get(weizhi - 1));
-           }
+            if (mubiaoList.size() > weizhi) {
+                System.out.println(mubiaoList.get(weizhi - 1));
+            }
         }
     }
 

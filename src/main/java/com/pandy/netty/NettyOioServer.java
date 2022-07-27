@@ -10,10 +10,11 @@ import io.netty.channel.socket.oio.OioServerSocketChannel;
 
 import java.net.InetSocketAddress;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 
 public class NettyOioServer {
     public void server(int port) throws InterruptedException {
-        ByteBuf buf = Unpooled.unreleasableBuffer(Unpooled.copiedBuffer("Hi", Charset.forName("UTF-8")));
+        ByteBuf buf = Unpooled.unreleasableBuffer(Unpooled.copiedBuffer("Hi", StandardCharsets.UTF_8));
         EventLoopGroup group = new OioEventLoopGroup();
         try {
             ServerBootstrap b = new ServerBootstrap();
@@ -37,7 +38,7 @@ public class NettyOioServer {
             f.channel().closeFuture().sync();
         } catch (InterruptedException e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             group.shutdownGracefully().sync();
         }
     }

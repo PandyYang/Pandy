@@ -2,11 +2,9 @@ package com.pandy.netty.nio;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
-import java.util.Arrays;
 
 public class NIOFileChannelRead {
     public static void main(String[] args) throws IOException {

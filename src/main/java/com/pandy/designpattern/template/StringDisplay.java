@@ -6,10 +6,10 @@ import java.nio.charset.StandardCharsets;
  * @author Pandy
  * @date 2021/3/5 16:24
  */
-public class StringDisplay extends AbstractDisplay{
+public class StringDisplay extends AbstractDisplay {
 
-    private String string;
-    private int width;
+    private final String string;
+    private final int width;
 
     public StringDisplay(String string) {
         this.string = string;

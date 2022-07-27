@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 
 public class Sort {
-    public static int[] MySort (int[] arr) {
+    public static int[] MySort(int[] arr) {
         // write code here
         if (arr.length <= 1) {
             return arr;
@@ -17,10 +17,10 @@ public class Sort {
          * 平均情况：T(n) = O(n2)
          */
         for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr.length-1-i; j++) {
+            for (int j = 0; j < arr.length - 1 - i; j++) {
                 if (arr[j + 1] < arr[j]) {
-                    int temp = arr[j+1];
-                    arr[j+1] = arr[j];
+                    int temp = arr[j + 1];
+                    arr[j + 1] = arr[j];
                     arr[j] = temp;
                 }
             }
@@ -43,7 +43,7 @@ public class Sort {
                 }
             }
             int temp = arr[minIndex];
-            arr[minIndex] =arr[i];
+            arr[minIndex] = arr[i];
             arr[i] = temp;
         }
         return arr;
@@ -51,20 +51,21 @@ public class Sort {
 
     /**
      * 归并排序
+     *
      * @param arr
      * @return
      */
     public static int[] MergeSort(int[] arr) {
         if (arr.length < 2) return arr;
         int mid = arr.length / 2;
-        int[] left = Arrays.copyOfRange(arr, 0 , mid);
-        int[] right = Arrays.copyOfRange(arr, mid+1, arr.length);
+        int[] left = Arrays.copyOfRange(arr, 0, mid);
+        int[] right = Arrays.copyOfRange(arr, mid + 1, arr.length);
         return merge(MergeSort(left), MergeSort(right));
     }
 
     public static int[] merge(int[] left, int[] right) {
         int[] result = new int[left.length + right.length];
-        for (int i = 0, j= 0, index = 0; i < result.length; i++) {
+        for (int i = 0, j = 0, index = 0; i < result.length; i++) {
             if (i >= left.length) {
                 result[index] = right[j++];
             } else if (j >= right.length) {
@@ -76,6 +77,14 @@ public class Sort {
             }
         }
         return result;
+    }
+
+    public static void main(String[] args) {
+        int[] res = new int[]{2, 3, 1, 5, 3, 2};
+        choose(res);
+        for (int i = 0; i < res.length; i++) {
+            System.out.println(res[i]);
+        }
     }
 
     public int[] MySort2(int[] arr) {
@@ -95,13 +104,5 @@ public class Sort {
             newArr[i] = queue.poll();
         }
         return newArr;
-    }
-
-    public static void main(String[] args) {
-        int[] res= new int[]{2, 3, 1, 5, 3, 2};
-        choose(res);
-        for (int i = 0; i < res.length; i++) {
-            System.out.println(res[i]);
-        }
     }
 }

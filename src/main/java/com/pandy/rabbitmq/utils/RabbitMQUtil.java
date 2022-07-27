@@ -9,7 +9,7 @@ import java.util.concurrent.TimeoutException;
 
 public class RabbitMQUtil {
 
-    private static ConnectionFactory connectionFactory;
+    private static final ConnectionFactory connectionFactory;
 
     static {
         connectionFactory = new ConnectionFactory();
@@ -43,7 +43,7 @@ public class RabbitMQUtil {
             if (channel != null)
                 channel.close();
             if (connection != null)
-            connection.close();
+                connection.close();
         } catch (IOException | TimeoutException e) {
             e.printStackTrace();
         }

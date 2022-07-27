@@ -37,7 +37,7 @@ public class IntToRoman {
         for (int i = 0; i < values.length; i++) {
             while (num >= values[i]) {
                 sb.append(rom[i]);
-                num-=values[i];
+                num -= values[i];
             }
         }
         return sb.toString();

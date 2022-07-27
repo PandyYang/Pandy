@@ -16,9 +16,9 @@ public class Num8Word {
             StringBuilder sb = new StringBuilder();
             sb.append(str);
             int zero = 8 - str.length() % 8;
-            while ((zero >0) && (zero < 8)) {
+            while ((zero > 0) && (zero < 8)) {
                 sb.append("0");
-                zero --;
+                zero--;
             }
             String str1 = sb.toString();
             while (str1.length() > 0) {

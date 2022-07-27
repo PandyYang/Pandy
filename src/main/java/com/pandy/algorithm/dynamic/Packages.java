@@ -24,12 +24,12 @@ public class Packages {
         for (int i = 1; i < value.length; i++) {
             // 表示剩余容量能装入当前物品的重量
             for (int j = 1; j < maxWeight; j++) {
-                if (j >= weight[i-1]) {
+                if (j >= weight[i - 1]) {
                     // 当前商品的价值 + 剩余空间可容纳的价值
-                    dp[i][j] = Math.max(dp[i-1][j], dp[i-1][j-weight[i-1]] + value[i-1]);
+                    dp[i][j] = Math.max(dp[i - 1][j], dp[i - 1][j - weight[i - 1]] + value[i - 1]);
                 } else {
                     // 不选当前商品
-                    dp[i][j] = dp[i-1][j];
+                    dp[i][j] = dp[i - 1][j];
                 }
             }
         }

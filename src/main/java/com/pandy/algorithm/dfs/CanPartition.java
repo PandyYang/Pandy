@@ -22,7 +22,7 @@ public class CanPartition {
         if (index == nums.length || target < 0) return false;
 
         // 选择当前元素和不选择当前元素两种情况
-        return dfs(nums, target - nums[index], index+1) ||
+        return dfs(nums, target - nums[index], index + 1) ||
                 dfs(nums, target, index + 1);
     }
 }

@@ -14,7 +14,7 @@ public class PlainOioServer {
         // 服务器绑定到指定端口
         final ServerSocket socket = new ServerSocket(port);
         try {
-            for(;;) {
+            for (; ; ) {
                 // 接受链接
                 final Socket clientSocket = socket.accept();
                 System.out.println("Accepted connection from " + clientSocket);
@@ -32,8 +32,7 @@ public class PlainOioServer {
                             clientSocket.close();
                         } catch (IOException e) {
                             e.printStackTrace();
-                        }
-                        finally {
+                        } finally {
                             try {
                                 clientSocket.close();
                             } catch (IOException e) {
@@ -43,8 +42,7 @@ public class PlainOioServer {
                     }
                 }).start();
             }
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

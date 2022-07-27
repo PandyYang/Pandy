@@ -6,7 +6,7 @@ package com.pandy.java.lock;
  */
 public interface ZkLock {
 
-    public void zkLock() throws InterruptedException;
+    void zkLock() throws InterruptedException;
 
-    public void zkUnLock();
+    void zkUnLock();
 }

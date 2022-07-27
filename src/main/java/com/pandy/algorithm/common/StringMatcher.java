@@ -26,7 +26,8 @@ public class StringMatcher {
     }
 
     public static int index2(String source, String pattern) {
-        int i = 0; int j = 0;
+        int i = 0;
+        int j = 0;
         char[] src = source.toCharArray();
         char[] ptn = pattern.toCharArray();
         int sLen = src.length;
@@ -55,7 +56,7 @@ public class StringMatcher {
         int k = -1;
         int j = 0;
         next[0] = -1;
-        while (j < plen - 1){
+        while (j < plen - 1) {
             if (k == -1 || p[j] == p[k]) {
                 k++;
                 j++;

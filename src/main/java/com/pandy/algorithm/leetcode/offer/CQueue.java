@@ -16,11 +16,11 @@ class CQueue {
     public CQueue() {
 
     }
-    
+
     public void appendTail(int value) {
-       stack1.push(value);
+        stack1.push(value);
     }
-    
+
     public int deleteHead() {
         if (!stack2.isEmpty()) {
             return stack2.pop();

@@ -49,9 +49,9 @@ public class Test {
                     domainout.write(url_ip_or_url + "\n");
                 }
             }
-                ipout.close();
-                domainout.close();
-                urlout.close();
+            ipout.close();
+            domainout.close();
+            urlout.close();
 
         } catch (IOException e) {
             e.printStackTrace();

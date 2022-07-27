@@ -7,7 +7,7 @@ import java.util.concurrent.CountDownLatch;
  * @Date 2021/7/20 22:19
  */
 public class CountDownLatchExample {
-    private static int LATCH_SIZE = 5;
+    private static final int LATCH_SIZE = 5;
     private static CountDownLatch doneSingle;
 
     public static void main(String[] args) {

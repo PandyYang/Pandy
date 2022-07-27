@@ -1,13 +1,12 @@
 package com.pandy.elasticsearch.model;
 
-import lombok.Data;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 import javax.persistence.Id;
 import java.io.Serializable;
 
 @Document(indexName = "user")
-public class User  implements Serializable {
+public class User implements Serializable {
 
     @Id
     private String id;

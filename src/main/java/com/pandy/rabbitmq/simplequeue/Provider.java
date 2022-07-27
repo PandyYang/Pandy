@@ -42,7 +42,7 @@ public class Provider {
         //参数3 是否独占队列
         //参数4 是否在消费完成后自动删除队列
         //参数5 附加参数
-        channel.queueDeclare("hello",false,false,false,null);
+        channel.queueDeclare("hello", false, false, false, null);
         //发布消息
         //参数1 交换机名称
         //参数2 队列名称

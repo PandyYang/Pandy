@@ -28,11 +28,11 @@ class Sort {
         if (l >= r) {
             return -1;
         }
-        int mid = (l + r) /2;
+        int mid = (l + r) / 2;
         if (target == data[mid]) {
             return mid;
         } else if (target > data[mid]) {
-            return searchDfs(data, mid+1, r, target);
+            return searchDfs(data, mid + 1, r, target);
         } else {
             return searchDfs(data, l, mid, target);
         }
@@ -43,8 +43,8 @@ class Sort {
             return;
         }
         int p = partition(arr, l, r);
-        QuickSort(arr, l, p-1);
-        QuickSort(arr, p+1, r);
+        QuickSort(arr, l, p - 1);
+        QuickSort(arr, p + 1, r);
     }
 
     public static int partition(int[] arr, int l, int r) {
@@ -73,9 +73,9 @@ class Sort {
     }
 
     public static void chooseSort(int[] arr) {
-        for (int i=0; i< arr.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
             int minIndex = i;
-            for (int j = i+1; j< arr.length; j++) {
+            for (int j = i + 1; j < arr.length; j++) {
                 if (arr[minIndex] > arr[j]) {
                     minIndex = j;
                 }
@@ -85,11 +85,11 @@ class Sort {
     }
 
     public static void insertSort(int[] arr) {
-        for (int i = 0; i< arr.length-1; i++) {
-            for (int j = i + 1; j> 0; j--) {
-                if (arr[j] < arr[j-1]) {
-                    swap(arr, j, j-1);
-                }else {
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = i + 1; j > 0; j--) {
+                if (arr[j] < arr[j - 1]) {
+                    swap(arr, j, j - 1);
+                } else {
                     break;
                 }
             }
@@ -104,8 +104,8 @@ class Sort {
         memo[0] = 0;
         memo[1] = 1;
 
-        for (int i = 2; i<=n; i++) {
-            memo[i] = memo[i - 1] + memo[i-2];
+        for (int i = 2; i <= n; i++) {
+            memo[i] = memo[i - 1] + memo[i - 2];
         }
         return memo[n];
     }

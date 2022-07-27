@@ -5,6 +5,7 @@ import java.util.Stack;
 public class StackToList {
     Stack<Integer> stack1 = new Stack();
     Stack<Integer> stack2 = new Stack();
+
     public void push(int node) {
         stack1.push(node);
     }

@@ -47,8 +47,18 @@ public class LifeTime implements BeanFactoryAware, BeanNameAware, InitializingBe
         return beanFactory;
     }
 
+    @Override
+    public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
+        System.out.println("调用BeanFactoryAware接口的setBeanFactory方法");
+    }
+
     public String getBeanName() {
         return beanName;
+    }
+
+    @Override
+    public void setBeanName(String name) {
+        System.out.println("调用BeanNameAware的setBeanName方法");
     }
 
     @Override
@@ -63,16 +73,6 @@ public class LifeTime implements BeanFactoryAware, BeanNameAware, InitializingBe
     }
 
     @Override
-    public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
-        System.out.println("调用BeanFactoryAware接口的setBeanFactory方法");
-    }
-
-    @Override
-    public void setBeanName(String name) {
-        System.out.println("调用BeanNameAware的setBeanName方法");
-    }
-
-    @Override
     public void destroy() throws Exception {
         System.out.println("调用Disposeable的destroy方法");
     }
@@ -82,11 +82,11 @@ public class LifeTime implements BeanFactoryAware, BeanNameAware, InitializingBe
         System.out.println("调用InitializingBean的afterPropertiesSet方法，");
     }
 
-    public void myInit(){
+    public void myInit() {
         System.out.println("调用init method的myInit方法");
     }
 
-    public void myDestroy(){
+    public void myDestroy() {
         System.out.println("调用init destroy的myDestory方法");
     }
 }

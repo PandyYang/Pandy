@@ -22,7 +22,7 @@ public class Consumer {
         //获取链接通道
         Connection connection = RabbitMQUtil.getConnection();
         Channel channel = connection.createChannel();
-        channel.queueDeclare("hello",false,false,false,null);
+        channel.queueDeclare("hello", false, false, false, null);
         //消费消息
         //参数1 消费哪个队列的消息
         //参数2 开始消息自动确认机制

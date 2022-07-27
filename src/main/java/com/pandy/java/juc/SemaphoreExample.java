@@ -10,6 +10,7 @@ import java.util.concurrent.Semaphore;
 public class SemaphoreExample {
     //停车场同时容纳的车辆10
     private static final Semaphore semaphore = new Semaphore(10);
+
     public static void main(String[] args) {
         //模拟100辆车进入停车场
         for (int i = 0; i < 100; i++) {

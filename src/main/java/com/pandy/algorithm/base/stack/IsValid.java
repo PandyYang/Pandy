@@ -16,7 +16,7 @@ public class IsValid {
                 stack.push(c);
             else if (c == '[')
                 stack.push(c);
-            //未完成之前栈不能为空 并且弹出的元素要和c相等 否则直接为false
+                //未完成之前栈不能为空 并且弹出的元素要和c相等 否则直接为false
             else if (stack.isEmpty() || stack.pop() != c)
                 return false;
         }
