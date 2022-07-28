@@ -1,5 +1,7 @@
 package main
 
+// example https://go.dev/tour/moretypes/25
+
 // 函数签名 func（m int） int
 func add1() func(int) int {
 	var x int
